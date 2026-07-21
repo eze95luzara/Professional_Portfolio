@@ -101,7 +101,7 @@ This section highlights the academic projects with the highest value for a profe
 - Technologies: Angular, TypeScript, and a web-based automation flow.
 - Goal: project developed as a PWM initiative, focused on practical and professional web development.
 - Repository: [View repository](https://github.com/eze95luzara/generador-presupuestos-rp)
-- Demo: [View demo](https://generador-presupuestos-rp.vercel.app/)
+- Demo: [View demo](https://generador-presupuestos-rp.pages.dev/)
 
 ## 🧹 Repository Guidance
 
@@ -221,7 +221,7 @@ En esta sección se agrupan los proyectos desarrollados con enfoque de aprendiza
 - Tecnologías: Angular, TypeScript y un flujo de automatización web.
 - Objetivo: proyecto desarrollado como iniciativa PWM, con enfoque en desarrollo web práctico y profesional.
 - Repositorio: [Ver repositorio](https://github.com/eze95luzara/generador-presupuestos-rp)
-- Demo: [Ver demo](https://generador-presupuestos-rp.vercel.app/)
+- Demo: [Ver demo](https://generador-presupuestos-rp.pages.dev/)
 
 ## 🧹 Guia del repositorio
 
