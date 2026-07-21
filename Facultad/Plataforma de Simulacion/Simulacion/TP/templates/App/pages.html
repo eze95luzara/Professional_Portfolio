@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Resultados</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+  <style>      
+    #scroll {
+       overflow:scroll;
+       height:400px;
+       width: 1100px;
+       background-color: whitesmoke;
+    }
+    </style> 
+</head>
+ <body style="background-color: grey;">
+    <div class="container">
+        <div align="center">
+            <h2 style= "font-style: oblique;">Histograma</h2>
+        <img src="data:image/png;base64,{{histograma}}" alt='', height="750", width="750">
+      </div>
+    </div>
+    <div class="container">
+        <div align="center">
+        <h2 style= "font-style: oblique;">Tabla de Chi Cuadrado</h2>
+    </div>
+        <div id="table" style="background-color: whitesmoke;">
+            <table class="table">
+                <tr>
+                  <th scope="col">Intervalo</th>
+                  <th scope="col">Fo</th>
+                  <th scope="col">Fe</th>
+                  <th scope="col">C</th>
+                  <th scope="col">C (AC)</th>
+                </tr>
+            {% for line in chi_cuadrado %}
+                <tr>    
+                  {% for element in line %}
+                    <td scope="row">{{element}}</td>
+                    {% endfor %}  
+                </tr>   
+            {% endfor %}   
+        </table>
+        </div>
+        <h5>Valor de Chi Cuadrado en Tabla: {{ chi_en_tabla }} </h5>  
+  </div>
+      </div>
+    <div class="container" align="center">
+        <div >
+        <h2 style= "font-style: oblique;">Números Aleatorios</h2>
+        <div id="scroll">
+        <table class="table">
+            <tr>
+                <th scope="col" align="center" style="background-color: red;">Indice</th>
+                <th scope="col" align="center" style="background-color: red;">Numero Random</th>
+            </tr>
+            <tr>  
+    {% for contact in page_obj %}
+    <td scope="row">{{ contact.index }}</td>
+    <td scope="row">{{ contact.number }}</td>
+</tr>  
+{% endfor %}
+</table>
+</div>
+
+    <span class="step-links" style="background-color: whitesmoke;">
+        {% if page_obj.has_previous %}
+            <a href="/pages?page=1">&laquo; Primera</a>
+            <a href="/pages?page={{ page_obj.previous_page_number }}">Anterior</a>
+        {% endif %}
+
+        <span class="current" style="background-color: whitesmoke;">
+            Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="/pages?page={{ page_obj.next_page_number }}">Siguiente</a>
+            <a href="/pages?page={{ page_obj.paginator.num_pages }}">Última &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+ </body>
+</html>

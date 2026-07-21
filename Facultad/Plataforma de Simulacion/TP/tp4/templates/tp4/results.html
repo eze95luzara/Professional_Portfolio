@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <h2>TP 4</h2>
+  </div>
+</div>
+<div class="container card card-body shadow my-3 py-4 px-5">
+    <div class="row border-bottom mb-3 pb-3">
+        <h4>Parametros ingresados</h4>
+        <div class="col-auto">
+            <span>Nomina: {{total_workers}} obreros</span>
+        </div>
+        <div class="col-auto">
+            <span>Costo por dia por obrero: {{workers_cost}}</span>
+        </div>
+        <div class="col-auto">
+            <span>Costo de produccion: {{production_cost}}</span>
+        </div>
+        <div class="col-auto">
+            <span>Beneficio por produccion: {{production_benefit}}</span>
+        </div>
+    </div>
+    <div class="row">
+        <h4 id="frequenciesTitle">Tabla de distribucion de frecuencias</h4>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Ausentes</th>
+              <th scope="col">Frecuencia</th>
+              <th scope="col">Probabilidad</th>
+              <th scope="col">Probabilidad Acumulada</th>
+              <th scope="col">Intervalos</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for key, value in frequency_table.items %}
+            <tr>
+                {% if key == 5 %}
+                <th scope="row">5 o más</th>
+                {% else %}
+                <th scope="row">{{key}}</th>
+                {% endif %}
+                {% for item in value %}
+                    <td>{{item}}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <h4>Historial</h4>
+        <span><small>De un total de {{total_iterations}} dias simulados</small></span>
+        <div class="col">
+            <table class='table'>
+                <thead>
+                    <tr>
+                        <th scope="col">Dia</th>
+                        <th scope="col">Numero random</th>
+                        <th scope="col">Obreros ausentes</th>
+                        <th scope="col">Obreros disponibles</th>
+                        <th scope="col">Fabrica operando</th>
+                        <th scope="col">Costo de obreros</th>
+                        <th scope="col">Costo de produccion</th>
+                        <th scope="col">Beneficio por produccion</th>
+                        <th scope="col">Beneficio del dia</th>
+                        <th scope="col">Beneficio Acumulado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in history %}
+                    <tr>
+                        {% for value in item.values %}
+                        {% if forloop.first %}
+                        <th scope="row">{{value}}</th>
+                        {% elif forloop.counter == 2 %}
+                        <td>{{value|truncatechars:5|slice:":4"}}</td>
+                        {% else %}
+                        <td>{{value}}</td>
+                        {% endif %}
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

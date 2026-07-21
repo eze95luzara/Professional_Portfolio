@@ -1,0 +1,164 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <h3>TP4</h3>
+  <div class="row">
+    <div class="col-12">
+      <div class="card card-body shadow">
+        <form action="{% url 'tp4:simulate' %}" method="post" class="row">
+          {% csrf_token %}
+          <h4>Parametros</h4>
+          <div class="col-6">
+            <div class="row">
+              <h5>Generales:</h5>         
+              <div class="col-6 mb-3">
+                <div class="form-floating">
+                  <input type="number" class="form-control form-control-sm" name="total_iterations" id="total_iterations" placeholder="Total de filas" min=0 required>
+                  <label for="total_iterations" class="form-label">Total de dias</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="row">
+              <h5>Historial:</h5>
+              <div class="col-6 mb-3">
+                <div class="form-floating">
+                  <input type="number" class="form-control form-control-sm" name="iterations_to_show" id="iterations_to_show" placeholder="Cantidad de iteraciones" min=0 required>
+                  <label for="iterations_to_show" class="form-label">Cantidad de iteraciones</label>
+                </div>
+              </div>
+            
+              <div class="col-6 mb-3">
+                <div class="form-floating">
+                  <input type="number" class="form-control form-control-sm" name="from_time" id="from_time" placeholder="Desde el dia" min=0 required>
+                  <label for="from_time" class="form-label">Desde el día</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 pt-3 mt-3 border-top">
+            <div class="row">
+              <h5>Variables de problema:</h5>
+              <div class="col-6">
+                <div class="row">
+                  <div class="col-12 mb-3 mt-5">
+                    <div class="form-floating">
+                      <input type="number" class="form-control form-control-sm" name="production_benefit" id="production_benefit" placeholder="Valor de venta del producto" min=0 step="0.001" required>
+                      <label for="production_benefit" class="form-label">Valor de venta del producto</label>
+                    </div>
+                  </div>
+                  <div class="col-12 mb-3">
+                    <div class="form-floating">
+                      <input type="number" class="form-control form-control-sm" name="production_cost" id="production_cost" placeholder="Costo de produccion" min=0 step="0.001" required>
+                      <label for="production_cost" class="form-label">Costo de produccion</label>
+                    </div>
+                  </div>
+                  <div class="col-12 mb-3">
+                    <div class="form-floating">
+                      <input type="number" class="form-control form-control-sm" name="per_worker_cost" id="per_worker_cost" placeholder="Remuneracion por dia" min=0 step="0.001" required>
+                      <label for="per_worker_cost" class="form-label">Remuneracion por dia</label>
+                    </div>
+                  </div>
+                  <div class="col-12 mb-3">
+                    <div class="form-floating">
+                      <select class="form-select" id="total_workers" name='total_workers' aria-label="Nomina">
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                      </select>
+                      <label for="total_workers">Nomina</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="row">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Ausentes</th>
+                        <th scope="col">Cantidad de dias</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row" class="align-middle">0</th>
+                        <td>
+                          <input type="number" class="form-control form-control-sm" min=0 name="absent" onchange="updateAbsentTotal()" required>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="align-middle">1</th>
+                        <td>
+                          <input type="number" class="form-control form-control-sm" min=0 name="absent" onchange="updateAbsentTotal()" required>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="align-middle">2</th>
+                        <td>
+                          <input type="number" class="form-control form-control-sm" min=0 name="absent" onchange="updateAbsentTotal()" required>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="align-middle">3</th>
+                        <td>
+                          <input type="number" class="form-control form-control-sm" min=0 name="absent" onchange="updateAbsentTotal()" required>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="align-middle">4</th>
+                        <td>
+                          <input type="number" class="form-control form-control-sm" min=0 name="absent" onchange="updateAbsentTotal()" required>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="align-middle">5 o mas</th>
+                        <td>
+                          <input type="number" class="form-control form-control-sm" min=0 name="absent" onchange="updateAbsentTotal()" required>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="align-middle">Total</th>
+                        <td>
+                          <span id="inputTotal" style="font-weight:bolder"> 0 </span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 mt-auto text-end">
+            <button type="submit" id="submitBtn" class="btn btn-outline-primary">Generar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  let canPost = false;
+  const updateAbsentTotal = () => {
+    let totalAbsents = 0;
+    document.querySelectorAll("[name='absent']").forEach((item) => {
+      totalAbsents += +item.value
+    });
+   
+    document.querySelector("#inputTotal").innerHTML = totalAbsents;
+
+    canPost = totalAbsents === 100
+    // if (!canPost){
+    //   document.querySelector("#submitBtn").setAttribute("disabled", true)
+    // } else {
+    //   document.querySelector("#submitBtn").removeAttribute("disabled")
+    // }
+  }
+</script>
+{% endblock %}

@@ -1,0 +1,60 @@
+@use './h-fonts' as f;
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree&family=Imprima&display=swap');
+
+
+@mixin flexColumn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@mixin flexRow{
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+@mixin styleLabel{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+@mixin styleInput{
+    border:none;
+    border:1px solid #ccc;
+    border-radius: 5px;
+    padding:10px;
+    outline: none;
+    background: transparent;
+    margin-top: 10px;
+}
+
+
+@mixin flexColumnForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+@mixin flexRowForm{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+}
+
+@mixin btnForm(){
+    border: none;
+    width: 50%;
+    height: 40px;
+    //margin-top: 20px 10px 50px 10px;
+    border-radius: 5px;
+    background-color: #00ff9d;
+    color: #fff;
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 0px;
+    font-family: f.$fontSubtitulos;
+    font-size: 20px;
+}

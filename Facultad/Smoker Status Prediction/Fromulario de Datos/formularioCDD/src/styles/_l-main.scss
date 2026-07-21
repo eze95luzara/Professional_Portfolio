@@ -1,0 +1,81 @@
+@charset "UTF-8";
+@use './h-mixin' as m;
+@use './h-fonts' as f;
+@use './h-breakpoint' as bp;
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree&family=Imprima&display=swap');
+
+
+
+
+.body_main{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    width: 100%;
+}
+
+//------------------------ DESKTOP ------------------------
+
+
+@media screen and (min-width: bp.$breakPoint--Medium) and (max-width: bp.$breakPoint--large){
+
+}
+
+
+// MAIN CONTACOS.HTML ----------------------------------------------------------------------------
+
+.main__form{
+    @include m.flexColumnForm();
+    align-items: center;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 0px;
+}
+.main__form__label, .main__form__section__article__label{
+    @include m.flexColumnForm();
+    @include m.styleLabel;
+    color: #09244B;
+    width: 50%;
+    font-family: f.$fontSubtitulos;
+}
+
+.main__form__label__input {
+    @include m.styleInput;
+    font-family: f.$fontSubtitulos;
+}
+
+.main__form__section{
+    @include m.flexRowForm;
+    align-items: center;
+}
+
+.main__form__section__article{
+    @include m.flexRowForm;
+    align-items: center;
+    //border: 1px solid red;
+}
+
+.main__form__section__article__icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px; /* Ancho deseado del botón */
+    height: 40px; /* Altura deseada del botón */
+    background-color: #09244B; /* Color de fondo deseado */
+    border-radius: 10px; /* Cambiar a 0 para hacerlo cuadrado */
+    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.25); /* Sombra deseada */
+}
+
+.main__form__section__article__select{
+    @include m.styleInput;
+    margin: 0;
+}
+
+.main__form__section__article__label--Listacontacto{
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+}
+
+.main__form__section__article--iconos{
+    gap:10px;
+}

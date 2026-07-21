@@ -1,0 +1,250 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+
+<style>
+    .header {
+        position: sticky;
+        top: 0;     
+    } 
+    .offcanvas {
+        width: 800px;
+    }
+    offcanvas-header {
+        width: 800px;
+    }
+    .offcanvas-body {
+        width: 800px
+    }
+</style>
+
+<div class="container">
+  <div class="row">
+    <h2>TP 5</h2>
+  </div>
+</div>
+<div class="container">
+    <div class="row mb-3">
+        <h4>Historial</h4>
+        <span>De un total de {{total_iterations}} dias simulados</span>
+        <span>Se muestran {{history.paginator.per_page}} filas por página</span>
+        <span>Total de páginas: {{history.paginator.num_pages}}</span>
+    </div>
+    <div class="row">
+        <div class="col-auto">
+            <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="offcanvas" data-bs-target="#cleaningOffcanvas" aria-controls="cleaningOffcanvas">Tiempos de Limpieza</button>
+          </div>
+          <div class="col">
+            <canvas id='cleaningChart' width="10" height="50"></canvas>
+          </div>
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="cleaningOffcanvas" aria-labelledby="cleaningTitle">
+            <div class="offcanvas-header">
+              <h4 class="offcanvas-title" id="cleaningTitle">Tiempos de limpieza</h4>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="col-auto"><h5>h = {{h|floatformat:2}}</h5></div>
+            <div class="offcanvas-body">
+              <table class="table table-striped">
+                <thead class="thead-light">
+                  <tr class="header">
+                        <th>Ti</th>
+                        <th>Ci</th>
+                        <th>Ci'</th>
+                        <th>Ti+1</th>
+                        <th>Ci+1</th>
+                        <th>Equipos</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for row in cleaning_table%}
+                        <tr>
+                        {% if row.teams != '' %}
+                            <th scope="row">{{row.Ti|default_if_none:""|floatformat:4}}</th>
+                            <th scope="row">{{row.Ci|default_if_none:""|floatformat:4}}</th>
+                            <th scope="row">{{row.derivada|default_if_none:""|floatformat:4}}</th>
+                            <th scope="row">{{row.Ti1|default_if_none:""|floatformat:4}}</th>
+                            <th scope="row">{{row.Ci1|default_if_none:""|floatformat:4}}</th>
+                            <th scope="row">{{row.teams|default_if_none:""}}</th>
+                        {% else %}
+                            <td>{{row.Ti|default_if_none:""|floatformat:4}}</td>
+                            <td>{{row.Ci|default_if_none:""|floatformat:4}}</td>
+                            <td>{{row.derivada|default_if_none:""|floatformat:4}}</td>
+                            <td>{{row.Ti1|default_if_none:""|floatformat:4}}</td>
+                            <td>{{row.Ci1|default_if_none:""|floatformat:4}}</td>
+                            <td>{{row.teams|default_if_none:""}}</td>
+                        {% endif %}
+                        </tr>
+                    {% endfor%}
+                </tbody>
+              </table>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class='table table-bordered table-striped'>
+                <thead style="position: sticky; top: 0" class="thead-light">
+                    <tr>
+                        <th class="header" colspan="3" scope="colgroup" align="center">Datos de Simulacion</th>
+                        <th class="header" colspan="3" scope="colgroup" align="center">Llegada Equipo Basketball</th>
+                        <th class="header" colspan="3" scope="colgroup" align="center">Llegada Equipo Futbol</th>
+                        <th class="header" colspan="3" scope="colgroup" align="center">Llegada Equipo Handball</th>
+                        <th class="header" colspan="3" scope="colgroup" align="center">Fin Partido Basketball</th>
+                        <th class="header" colspan="3" scope="colgroup" align="center">Fin Partido Futbol</th>
+                        <th class="header" colspan="3" scope="colgroup" align="center">Fin Partido Handball</th>
+                        <th class="header" colspan="3" scope="colgroup" align="center">Fin Limpieza Cancha</th>
+                        <th class="header" colspan="2" scope="colgroup" align="center">Cancha</th>
+                        <th class="header" colspan="7" scope="colgroup" align="center">Estadísticos</th>
+                        <th class="header" scope="col"> <hr width="3" size="50"/> </th>
+                        {% for team in equipos %}
+                            <th class="header" colspan="2" scope="colgroup">{{team}}</th>
+                        {% endfor %}
+                    </tr>
+                    <tr>
+                        <th class="header" scope="col">Iteracion</th>
+                        <th class="header" scope="col">Tiempo actual</th>
+                        <th class="header" scope="col"> Tipo de Evento</th>
+                        <th class="header" scope="col">Random</th>
+                        <th class="header" scope="col">Tiempo entre llegadas</th>
+                        <th class="header" scope="col">Próxima llegada</th>
+                        <th class="header" scope="col">Random</th>
+                        <th class="header" scope="col">Tiempo entre llegadas</th>
+                        <th class="header" scope="col">Próxima llegada</th>
+                        <th class="header" scope="col">Random</th>
+                        <th class="header" scope="col">Tiempo entre llegadas</th>
+                        <th class="header" scope="col">Próxima llegada</th>
+                        <th class="header" scope="col">Random</th>
+                        <th class="header" scope="col">Tiempo de ocupación</th>
+                        <th class="header" scope="col">Fin ocupación</th>
+                        <th class="header" scope="col">Random</th>
+                        <th class="header" scope="col">Tiempo de ocupación</th>
+                        <th class="header" scope="col">Fin ocupación</th>
+                        <th class="header" scope="col">Random</th>
+                        <th class="header" scope="col">Tiempo de ocupación</th>
+                        <th class="header" scope="col">Fin ocupación</th>
+                        <th class="header" scope="col">D</th>
+                        <th class="header" scope="col">Tiempo de limpieza</th>
+                        <th class="header" scope="col">Fin limpieza cancha</th>
+                        <th class="header" scope="col">Estado</th>
+                        <th class="header" scope="col">Cola</th>
+                        <th class="header" scope="col">Cantidad partidos Basket iniciados</th>
+                        <th class="header" scope="col">Tiempo espera acumulado Basket</th>
+                        <th class="header" scope="col">Cantidad partidos Futbol iniciados</th>
+                        <th class="header" scope="col">Tiempo espera acumulado Futbol</th>
+                        <th class="header" scope="col">Cantidad partidos Handball iniciados</th>
+                        <th class="header" scope="col">Tiempo espera acumulado Handball</th>
+                        <th class="header" scope="col">Tiempo acumulado de limpieza</th>
+                        <th class="header" scope="col"> <hr width="3" size="50"/> </th>
+                        {% for team in equipos %}
+                            <th scope="col">Hora Llegada</th>
+                            <th scope="col">Estado</th>
+                        {% endfor %}
+                    </tr>
+                
+                </thead>
+                <tbody>
+                    {% for item in history %}
+                        <tr>
+                        <th>{{item.iteration}}</th>
+                        <td> {{item.current_time|floatformat:4}}</td>
+                        <td> {{item.event_type}}</td>
+                        <td>{{item.Basketball_arrival_random|default_if_none:""|floatformat:4}}</td>
+                        <td>{{item.Basketball_time_between_arrivals|default_if_none:""|floatformat:4}}</td>
+                        <th scope="row"> {{item.Basketball_arrival|floatformat:4}}</th>
+                        <td> {{item.Football_arrival_random|default_if_none:""|floatformat:4}}</td>
+                        <td> {{item.Football_time_between_arrivals|default_if_none:""|floatformat:4}}</td>
+                        <th scope="row"> {{item.Football_arrival|floatformat:4}}</th>
+                        <td>{{item.Handball_arrival_random|default_if_none:""|floatformat:4}}</td>
+                        <td>{{item.Handball_time_between_arrivals|default_if_none:""|floatformat:4}}</td>
+                        <th scope="row"> {{item.Handball_arrival|floatformat:4}}</th>
+                        <td>{{item.Basketball_finish_random|default_if_none:""|floatformat:4}}</td>
+                        <td>{{item.Basketball_time_to_finish|default_if_none:""|floatformat:4}}</td>
+                        <th scope="row"> {{item.Basketball_finish|default_if_none:""|floatformat:4}}</th>
+                        <td>{{item.Football_finish_random|default_if_none:""|floatformat:4}}</td>
+                        <td>{{item.Football_time_to_finish|default_if_none:""|floatformat:4}}</td>
+                        <th scope="row"> {{item.Football_finish|default_if_none:""|floatformat:4}}</th>
+                        <td>{{item.Handball_finish_random|default_if_none:""|floatformat:4}}</td>
+                        <td>{{item.Handball_time_to_finish|default_if_none:""|floatformat:4}}</td>
+                        <th scope="row"> {{item.Handball_finish|default_if_none:""|floatformat:4}}</th>
+                        <td>{{item.Cleaning_d|default_if_none:""|floatformat:0}}</td>
+                        <td>{{item.Cleaning_time|default_if_none:""|floatformat:4}}</td>
+                        <th scope="row">{{item.Cleaning_finish|default_if_none:""|floatformat:4}}</th>
+                        <td>{{item.server_status}}</td>
+                        <td>{{item.Cola}}</td>
+                        <td> {{item.equipos_finalizados_basketball}}</td>
+                        <td> {{item.espera_basketball|floatformat:4}}</td>
+                        <td> {{item.equipos_finalizados_football}}</td>
+                        <td> {{item.espera_football|floatformat:4}}</td>
+                        <td> {{item.equipos_finalizados_handball}}</td>
+                        <td> {{item.espera_handball|floatformat:4}}</td>
+                        <td> {{item.tiempo_limpieza_acumulado|floatformat:4}}</td>
+                        <!-- <td> {{item.start_equipos}}</td>
+                        <td> {{item.equipos}}</td> -->
+                        <th scope="col"> <hr width="3" size="50"/> </th>
+                        {% for team in equipos %}
+                            {% if forloop.counter0 == item.start_equipos%}
+                                {% for team in item.get_parsed_teams %}
+                                    {% if team.status != 'Destruido'%}
+                                        <td> {{team.hora_llegada|floatformat:4}}</td>
+                                        <td> {{team.status}}</td>
+                                    {% else %}
+                                        <td></td>
+                                        <td></td>
+                                   {% endif %}
+                               {% endfor %}
+                            {% elif forloop.counter0 <= item.empty_spaces %}
+                                <td></td>
+                                <td></td>
+                           {% endif %}
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </span>
+        <div class="pagination justify-content-center">
+            {% if history.has_previous %}
+                <li class="page-item"><a class="page-link" href="/tp6/paginas?page=1">Primera</a></li>
+                <li class="page-item"><a class="page-link" href="/tp6/paginas?page={{ history.previous_page_number }}">Anterior</a></li>
+            {% else %}
+                <li class="page-item disabled"><span class="page-link">Primera</span></li>
+                <li class="page-item disabled"><span class="page-link">Anterior</span></li>
+            {% endif %}
+            {% for i in history.paginator.page_range %}
+                {% if history.number == i %}
+                    <li class="page-item active" aria-current="page">
+                        <span class="page-link">
+                        {{ i }}
+                        <span class="sr-only">(current)</span>
+                        </span>
+                    </li>
+                {% elif i > history.number|add:'-5' and i < history.number|add:'5' %}
+                    <li class="page-item"><a class="page-link" href="/tp6/paginas?page={{ i }}">{{ i }}</a></li>
+                {% endif %}
+            {% endfor %}
+          {% if history.paginator.num_pages > history.number|add:'4' %}
+            <li class="page-item"><a class="page-link" href="/tp6/paginas?page={{ history.number|add:'5'}}">&hellip;</a></li>
+          {% endif %}
+          {% if history.has_next %}
+              <li class="page-item"><a class="page-link" href="/tp6/paginas?page={{ history.next_page_number }}">Siguiente</a></li>
+              <li class="page-item"><a class="page-link" href="/tp6/paginas?page={{ history.paginator.num_pages }}">Última</a></li>
+          {% else %}
+              <li class="page-item disabled"><span class="page-link">Siguiente</span></li>
+              <li class="page-item disabled"><span class="page-link">Última</span></li>
+          {% endif %}
+        </div>
+        <span class="current"><a href="/tp6">Reiniciar simulación</a>
+    <div class="row">
+        <h4>Resultados</h4>
+        <span>Tiempo promedio de espera Basketball: {{promedio_basketball|floatformat:4}} minutos</span>
+        <span>Tiempo promedio de espera Handball: {{promedio_handball|floatformat:4}} minutos</span>
+        <span>Tiempo promedio de espera Football: {{promedio_football|floatformat:4}} minutos</span>
+        <span>Tasa de Uso del servicio de limpieza: {{tasa_limpieza|floatformat:2}}%</span>
+    </div>    
+</div>
+
+{% endblock %}

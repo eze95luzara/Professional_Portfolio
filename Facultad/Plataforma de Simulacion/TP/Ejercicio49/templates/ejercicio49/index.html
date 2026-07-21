@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <h3>Ejercicio 49</h3>
+  <div class="row">
+    <div class="col-12">
+      <div class="card card-body shadow">
+        <form action="{% url 'ejercicio49:simulate' %}" method="post" class="row">
+          {% csrf_token %}
+          <h4>Parametros</h4>
+          <div class="col-6">
+            <div class="row">
+              <h5>Generales:</h5>         
+              <div class="col-6 mb-3">
+                <div class="form-floating">
+                  <input type="number" class="form-control form-control-sm" name="total_iterations" id="total_iterations" placeholder="Total de filas" min=0 required>
+                  <label for="total_iterations" class="form-label">Total de iteraciones</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="row">
+              <h5>Historial:</h5>
+              <div class="col-6 mb-3">
+                <div class="form-floating">
+                  <input type="number" class="form-control form-control-sm" name="iterations_to_show" id="iterations_to_show" placeholder="Cantidad de iteraciones" min=0 required>
+                  <label for="iterations_to_show" class="form-label">Cantidad de iteraciones</label>
+                </div>
+              </div>
+            
+              <div class="col-6 mb-3">
+                <div class="form-floating">
+                  <input type="number" class="form-control form-control-sm" name="from_time" id="from_time" placeholder="Desde el dia" min=0 required>
+                  <label for="from_time" class="form-label">Desde la hora (j)</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 pt-3 mt-3 border-top">
+            <div class="row">
+              <h5>Variables de problema:</h5>
+              <div class="col-6">
+                <div class="row">
+                  
+                  <div class="col-12 mb-3">                    
+                        <h6>Llegadas de Personas (Exp. Negativa) (por Hora) </h6>   
+                        <div class="col-6">                            
+                            <div class="form-floating d-flex">
+                              <input type="number" class="form-control form-control-sm" name="llegada_cliente_mean" id="llegada_cliente_mean" placeholder="Media en hrs" min=0 step="0.000001" value=10 required>
+                              <label for="llegada_cliente_mean" class="form-label">Media</label>
+                            </div>
+                        </div>                                           
+                  </div>
+
+                  <div class="col-12 mb-3">                    
+                    <h6>Llegada a Cabina (Constante) (por Segundos) </h6>
+                    <div class="col-6">                        
+                        <div class="form-floating d-flex">
+                          <input type="number" class="form-control form-control-sm" name="llegada_cabina" id="llegada_cabina" placeholder="Valor en Seg" min=0 step="0.000001"  value=10 required>
+                          <label for="llegada_cabina" class="form-label">Valor</label>
+                        </div>
+                    </div>                                           
+                  </div>
+
+                  <div class="col-12 mb-3">
+                    <h6>Duracion de Llamada (Uniforme) (por Minuto)</h6>                    
+                        <div class="col-6">
+                            <div class="form-floating d-flex">
+                              <input type="number" class="form-control form-control-sm" name="diracion_llamada_mean" id="diracion_llamada_mean" placeholder="Media en min" min=0 step="0.000001" value=5 required>
+                              <label for="diracion_llamada_mean" class="form-label">Media</label>
+                            </div>
+                            <div class="form-floating d-flex">
+                              <input type="number" class="form-control form-control-sm" name="diracion_llamada_range" id="diracion_llamada_range" placeholder="Rango (+/-) en min" min=0 step="0.000001" value=2 required>
+                              <label for="diracion_llamada_range" class="form-label">Rango (+/-)</label>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 mb-3">                    
+                    <h6>Duracion Cobro Llamada (Constante) (por Segundos) </h6>
+                    <div class="col-6">                        
+                        <div class="form-floating d-flex">
+                          <input type="number" class="form-control form-control-sm" name="duracion_cobro" id="duracion_cobro" placeholder="Valor en Seg" min=0 step="0.000001"  value=15 required>
+                          <label for="duracion_cobro" class="form-label">Valor</label>
+                        </div>
+                    </div>                                           
+                  </div>
+                 
+                  
+                </div>
+              </div>
+            </div>
+          
+          
+          <div class="col-12 mt-auto text-end">
+            <button type="submit" id="submitBtn" class="btn btn-outline-primary">Generar</button>
+          </div>
+          
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  let canPost = false;
+  const updateAbsentTotal = () => {
+    let totalAbsents = 0;
+    document.querySelectorAll("[name='absent']").forEach((item) => {
+      totalAbsents += +item.value
+    });
+   
+    document.querySelector("#inputTotal").innerHTML = totalAbsents;
+
+    canPost = totalAbsents === 100
+    // if (!canPost){
+    //   document.querySelector("#submitBtn").setAttribute("disabled", true)
+    // } else {
+    //   document.querySelector("#submitBtn").removeAttribute("disabled")
+    // }
+  }
+</script>
+{% endblock %}

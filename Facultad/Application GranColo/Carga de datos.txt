@@ -1,0 +1,149 @@
+INSERT INTO Clubes (id, nombre, fechaFundacion, nombreEstadio, direccion, aforo)
+VALUES (1, 'Boca Juniors', CONVERT (date, '3/2/1905', 103), 'Alberto J. Armando' , 'Brandson 805', 49000) 
+
+INSERT INTO Clubes (id, nombre, fechaFundacion, nombreEstadio, direccion, aforo)
+VALUES (2, 'River Plate', CONVERT (date, '25/5/1901', 103), 'Antonio Vespucio Liberti', 'Av. Figueroa Alcorta 7597', 61688) 
+
+INSERT INTO Clubes (id, nombre, fechaFundacion, nombreEstadio, direccion, aforo)
+VALUES (3, 'Independiente', CONVERT (date, '1/1/1905', 103), 'Libertadores de America', 'Bochini 751', 48069) 
+
+INSERT INTO Clubes (id, nombre, fechaFundacion, nombreEstadio, direccion, aforo)
+VALUES (4, 'Racing', CONVERT (date, '25/3/1903', 103), 'Presidente Perón', 'Pasaje Mozart y Corbatta', 65500) 
+
+INSERT INTO Clubes (id, nombre, fechaFundacion, nombreEstadio, direccion, aforo)
+VALUES (5, 'Estudiantes', CONVERT (date, '4/8/1905', 103), 'Ciudad de la Plata', 'Ciudad de La Plata', 53000)
+
+
+
+
+
+
+INSERT INTO Usuarios (nombreUsuario, contraseña, nombre, apellido, nroDoc, tipoDoc, mail, clubHincha)
+VALUES ('John5', 'tenesxtenesy', 'Juan Pablo', 'Nieto', 37403213, 1, 'juan.pablo_nieto@gmail.com', 5)
+
+INSERT INTO Usuarios (nombreUsuario, contraseña, nombre, apellido, nroDoc, tipoDoc, mail, clubHincha)
+VALUES ('EzeLvlzara', 'chipotedorado', 'Ezequiel', 'Luzara', 38902884, 1, 'eze.luzara38@gmail.com', 3)
+
+INSERT INTO Usuario (nombreUsuario, contraseña, nombre, apellido, nroDoc, tipoDoc, mail, clubHincha)
+VALUES ('ValenGringo', 'patitodeule87', 'Valentín', 'Reviglio', 40767424, 1, 'rvalentinr@hotmail.com', 2)
+
+INSERT INTO Usuario (nombreUsuario, contraseña, nombre, apellido, nroDoc, tipoDoc, mail, clubHincha)
+VALUES ('LokoMaisi37', 'quelehicealpartido', 'Maximiliano', 'Cáceres', 39467856, 1, 'maxi.kpo.powerRangerRojo@yahoo.com', 4)
+
+INSERT INTO Usuario (nombreUsuario, contraseña, nombre, apellido, nroDoc, tipoDoc, mail, clubHincha)
+VALUES ('CharlyM', 'leimotiv94', 'Miño', 'Carlos', 36407425, 1, 'carlos.a_mino@hotmail.com', 1)
+
+
+
+
+
+
+INSERT INTO Posiciones(id, nombre, descripcion)
+VALUES (4, 'DEL', 'Delantero')
+
+INSERT INTO Posiciones(id, nombre, descripcion)
+VALUES (3, 'VOL', 'Volante')
+
+INSERT INTO Posiciones(id, nombre, descripcion)
+VALUES (2, 'DEF', 'Defensor')
+
+INSERT INTO Posiciones(id, nombre, descripcion)
+VALUES (1, 'POR', 'Portero')
+
+
+
+
+
+
+
+INSERT INTO Jugadores(nroDoc, tipoDoc, idClub, nombre, apellido, idPosicion, idEstado)
+VALUES (28943546, 1, 1, 'Carlos', 'Tévez', 4, 1)
+
+INSERT INTO Jugadores(nroDoc, tipoDoc, idClub, nombre, apellido, idPosicion, idEstado)
+VALUES (34535678, 1, 1, 'Fernando', 'Gago', 3, 3)
+
+INSERT INTO Jugadores(nroDoc, tipoDoc, idClub, nombre, apellido, idPosicion, idEstado)
+VALUES (24567984, 1, 2, 'Jonatan', 'Maidana', 2, 2)
+
+INSERT INTO Jugadores(nroDoc, tipoDoc, idClub, nombre, apellido, idPosicion, idEstado)
+VALUES (31345987, 1, 2, 'Augusto', 'Batalla', 1, 2)
+
+INSERT INTO Jugadores(nroDoc, tipoDoc, idClub, nombre, apellido, idPosicion, idEstado)
+VALUES (32345542, 1, 3, 'Nicolás', 'Figal', 2, 3)
+
+INSERT INTO Jugadores(nroDoc, tipoDoc, idClub, nombre, apellido, idPosicion, idEstado)
+VALUES (24596876, 1, 3, 'Domingo', 'Blanco', 3, 4)
+
+INSERT INTO Jugadores(nroDoc, tipoDoc, idClub, nombre, apellido, idPosicion, idEstado)
+VALUES (34569754, 1, 4, 'Gustavo', 'Bou', 4, 1)
+
+INSERT INTO Jugadores(nroDoc, tipoDoc, idClub, nombre, apellido, idPosicion, idEstado)
+VALUES (25968746, 1, 4, 'Nicolás', 'Sánchez', 2, 2)
+
+INSERT INTO Jugadores(nroDoc, tipoDoc, idClub, nombre, apellido, idPosicion, idEstado)
+VALUES (34213456, 1, 5, 'Lucas', 'Viatri', 4, 3)
+
+INSERT INTO Jugadores(nroDoc, tipoDoc, idClub, nombre, apellido, idPosicion, idEstado)
+VALUES (23495860, 1, 5, 'Nahuel', 'Losada', 1, 4)
+
+INSERT INTO Jugadores(nroDoc, tipoDoc, idClub, nombre, apellido, idPosicion, idEstado)
+VALUES (30345768, 1, 6, 'José', 'Gómez', 2, 1)
+
+INSERT INTO Jugadores(nroDoc, tipoDoc, idClub, nombre, apellido, idPosicion, idEstado)
+VALUES (35968213, 1, 6, 'Fernando', 'Monetti', 1, 1)
+
+
+
+
+
+
+
+INSERT INTO Equipos (nombre, lema, color, nombreUsuario)
+VALUES ('Submarinito Jr.', 'Estamos a 20.000 leguas de ganar', 'azul', 'LokoMaisi37')
+
+INSERT INTO Equipos (nombre, lema, color, nombreUsuario)
+VALUES ('Lannister FC', 'Los dragones a por los balones', 'rojo', 'John5')
+
+INSERT INTO Equipos (nombre, lema, color, nombreUsuario)
+VALUES ('Precausion FC', 'porqe ombre precabido bale por dos', 'negro', 'EzeLvlzara')
+
+INSERT INTO Equipos (nombre, lema, color, nombreUsuario)
+VALUES ('Very Strong FC', 'All for one and one for all', 'amarillo', 'ValenGringo')
+
+INSERT INTO Equipos (nombre, lema, color, nombreUsuario)
+VALUES ('Indios FC', 'No saber perder, nosotros ganar', 'verde', 'CharlyM')
+
+
+
+
+
+
+
+INSERT INTO Partidos(id, nroFecha, idTorneo, fecha, horario)
+VALUES (1, 1, 1, CONVERT(date, '28/08/2016', 103), CONVERT(time, '20:30:00',108))
+
+INSERT INTO Partidos(id, nroFecha, idTorneo, fecha, horario)
+VALUES (2, 1, 1, CONVERT(date, '29/08/2016', 103), CONVERT(time, '22:30:00',108))
+
+INSERT INTO Partidos(id, nroFecha, idTorneo, fecha, horario)
+VALUES (3, 1, 1, CONVERT(date, '31/08/2016', 103), CONVERT(time, '17:00:00',108))
+
+
+
+
+
+
+
+
+
+INSERT INTO Estados (id, nombre, descripcion)
+VALUES (1, 'TIT', 'Titular')
+
+INSERT INTO Estados (id, nombre, descripcion)
+VALUES (2, 'HAB', 'Habilitado')
+
+INSERT INTO Estados (id, nombre, descripcion)
+VALUES (3, 'LES', 'Lesionado')
+
+INSERT INTO Estados (id, nombre, descripcion)
+VALUES (4, 'SUS', 'Suspendido')

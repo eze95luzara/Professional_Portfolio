@@ -1,0 +1,5 @@
+Este software fue desarollado para que alumnos
+de primer año nivel secundario puedan repasar 
+conceptos aprendidos anteriormente en matematicas,
+con retroalimentacion y brindar a profesores
+una herramienta para evaluar.

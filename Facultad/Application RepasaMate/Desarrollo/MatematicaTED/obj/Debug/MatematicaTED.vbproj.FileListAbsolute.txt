@@ -1,0 +1,84 @@
+c:\users\admin\documents\visual studio 2013\Projects\MatematicaTED\MatematicaTED\bin\Debug\MatematicaTED.exe.config
+c:\users\admin\documents\visual studio 2013\Projects\MatematicaTED\MatematicaTED\bin\Debug\MatematicaTED.exe
+c:\users\admin\documents\visual studio 2013\Projects\MatematicaTED\MatematicaTED\bin\Debug\MatematicaTED.pdb
+c:\users\admin\documents\visual studio 2013\Projects\MatematicaTED\MatematicaTED\bin\Debug\MatematicaTED.xml
+c:\users\admin\documents\visual studio 2013\Projects\MatematicaTED\MatematicaTED\obj\Debug\MatematicaTED.frm_login.resources
+c:\users\admin\documents\visual studio 2013\Projects\MatematicaTED\MatematicaTED\obj\Debug\MatematicaTED.Resources.resources
+c:\users\admin\documents\visual studio 2013\Projects\MatematicaTED\MatematicaTED\obj\Debug\MatematicaTED.vbproj.GenerateResource.Cache
+c:\users\admin\documents\visual studio 2013\Projects\MatematicaTED\MatematicaTED\obj\Debug\MatematicaTED.exe
+c:\users\admin\documents\visual studio 2013\Projects\MatematicaTED\MatematicaTED\obj\Debug\MatematicaTED.xml
+c:\users\admin\documents\visual studio 2013\Projects\MatematicaTED\MatematicaTED\obj\Debug\MatematicaTED.pdb
+c:\users\admin\documents\visual studio 2013\Projects\MatematicaTED\MatematicaTED\obj\Debug\MatematicaTED.frm_alumno.resources
+c:\users\admin\documents\visual studio 2013\Projects\MatematicaTED\MatematicaTED\obj\Debug\MatematicaTED.frm_docente.resources
+c:\users\admin\documents\visual studio 2013\Projects\MatematicaTED\MatematicaTED\obj\Debug\MatematicaTED.frm_cuestionario.resources
+c:\users\admin\documents\visual studio 2013\Projects\MatematicaTED\MatematicaTED\obj\Debug\MatematicaTED.frm_estadistica.resources
+c:\users\admin\documents\visual studio 2013\Projects\MatematicaTED\MatematicaTED\obj\Debug\MatematicaTED.frm_categorias.resources
+c:\users\admin\documents\visual studio 2013\Projects\MatematicaTED\MatematicaTED\obj\Debug\MatematicaTED.frm_pregunta.resources
+c:\users\admin\documents\visual studio 2013\Projects\MatematicaTED\MatematicaTED\obj\Debug\MatematicaTED.frm_editor.resources
+C:\Users\admin\Documents\Visual Studio 2013\Projects\MatematicaTED\MatematicaTED\bin\Debug\EntityFramework.dll
+C:\Users\admin\Documents\Visual Studio 2013\Projects\MatematicaTED\MatematicaTED\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\admin\Documents\Visual Studio 2013\Projects\MatematicaTED\MatematicaTED\bin\Debug\EntityFramework.xml
+C:\Users\admin\Documents\Visual Studio 2013\Projects\MatematicaTED\MatematicaTED\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\admin\Documents\Visual Studio 2013\Projects\MatematicaTED\MatematicaTED\obj\Debug\MatematicaTED.vbprojResolveAssemblyReference.cache
+C:\Users\WinUser\Downloads\MatematicaTEDFF\MatematicaTED\bin\Debug\MatematicaTED.exe.config
+C:\Users\WinUser\Downloads\MatematicaTEDFF\MatematicaTED\bin\Debug\MatematicaTED.exe
+C:\Users\WinUser\Downloads\MatematicaTEDFF\MatematicaTED\bin\Debug\MatematicaTED.pdb
+C:\Users\WinUser\Downloads\MatematicaTEDFF\MatematicaTED\bin\Debug\MatematicaTED.xml
+C:\Users\WinUser\Downloads\MatematicaTEDFF\MatematicaTED\bin\Debug\EntityFramework.dll
+C:\Users\WinUser\Downloads\MatematicaTEDFF\MatematicaTED\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\WinUser\Downloads\MatematicaTEDFF\MatematicaTED\bin\Debug\EntityFramework.xml
+C:\Users\WinUser\Downloads\MatematicaTEDFF\MatematicaTED\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\WinUser\Downloads\MatematicaTEDFF\MatematicaTED\obj\Debug\MatematicaTED.vbprojResolveAssemblyReference.cache
+C:\Users\WinUser\Downloads\MatematicaTEDFF\MatematicaTED\obj\Debug\MatematicaTED.frm_alumno.resources
+C:\Users\WinUser\Downloads\MatematicaTEDFF\MatematicaTED\obj\Debug\MatematicaTED.frm_cuestionario.resources
+C:\Users\WinUser\Downloads\MatematicaTEDFF\MatematicaTED\obj\Debug\MatematicaTED.frm_cursos.resources
+C:\Users\WinUser\Downloads\MatematicaTEDFF\MatematicaTED\obj\Debug\MatematicaTED.frm_docente.resources
+C:\Users\WinUser\Downloads\MatematicaTEDFF\MatematicaTED\obj\Debug\MatematicaTED.frm_editor.resources
+C:\Users\WinUser\Downloads\MatematicaTEDFF\MatematicaTED\obj\Debug\MatematicaTED.frm_estDocente.resources
+C:\Users\WinUser\Downloads\MatematicaTEDFF\MatematicaTED\obj\Debug\MatematicaTED.frm_login.resources
+C:\Users\WinUser\Downloads\MatematicaTEDFF\MatematicaTED\obj\Debug\MatematicaTED.frm_pantallaInicial.resources
+C:\Users\WinUser\Downloads\MatematicaTEDFF\MatematicaTED\obj\Debug\MatematicaTED.Resources.resources
+C:\Users\WinUser\Downloads\MatematicaTEDFF\MatematicaTED\obj\Debug\MatematicaTED.vbproj.GenerateResource.Cache
+C:\Users\WinUser\Downloads\MatematicaTEDFF\MatematicaTED\obj\Debug\MatematicaTED.exe
+C:\Users\WinUser\Downloads\MatematicaTEDFF\MatematicaTED\obj\Debug\MatematicaTED.xml
+C:\Users\WinUser\Downloads\MatematicaTEDFF\MatematicaTED\obj\Debug\MatematicaTED.pdb
+C:\Users\WinUser\Downloads\MatematicaTEDFF\MatematicaTED\obj\Debug\MatematicaTED.frm_desafio.resources
+C:\Users\WinUser\Downloads\MatematicaTEDFF\MatematicaTED\obj\Debug\MatematicaTED.frm_RevisarCues.resources
+C:\Users\WinUser\Downloads\MatematicaTEDFF\MatematicaTED\obj\Debug\MatematicaTED.frm_verCues.resources
+C:\Users\WinUser\Downloads\MatematicaTEDFF\MatematicaTED\obj\Debug\MatematicaTED.Frm_Categoria.resources
+C:\Users\WinUser\Downloads\MatematicaTEDFF\MatematicaTED\obj\Debug\MatematicaTED.Frm_Preguntas.resources
+C:\Users\WinUser\Downloads\MatematicaTEDFF\MatematicaTED\obj\Debug\MatematicaTED.Frm_PreguntasDsf.resources
+C:\Users\WinUser\Downloads\MatematicaTEDFF\MatematicaTED\obj\Debug\MatematicaTED.frm_DesafioFIn.resources
+C:\Users\WinUser\Downloads\MatematicaTEDFF\MatematicaTED\obj\Debug\MatematicaTED.frm_alumnoAgre.resources
+C:\Users\WinUser\Downloads\MatematicaTEDFF\MatematicaTED\obj\Debug\MatematicaTED.frm_DesafioRecibidos.resources
+C:\Users\WinUser\Downloads\RepasaMate\MatematicaTED\bin\Debug\MatematicaTED.exe.config
+C:\Users\WinUser\Downloads\RepasaMate\MatematicaTED\bin\Debug\MatematicaTED.exe
+C:\Users\WinUser\Downloads\RepasaMate\MatematicaTED\bin\Debug\MatematicaTED.pdb
+C:\Users\WinUser\Downloads\RepasaMate\MatematicaTED\bin\Debug\MatematicaTED.xml
+C:\Users\WinUser\Downloads\RepasaMate\MatematicaTED\bin\Debug\EntityFramework.dll
+C:\Users\WinUser\Downloads\RepasaMate\MatematicaTED\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\WinUser\Downloads\RepasaMate\MatematicaTED\bin\Debug\EntityFramework.xml
+C:\Users\WinUser\Downloads\RepasaMate\MatematicaTED\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\WinUser\Downloads\RepasaMate\MatematicaTED\obj\Debug\MatematicaTED.vbprojResolveAssemblyReference.cache
+C:\Users\WinUser\Downloads\RepasaMate\MatematicaTED\obj\Debug\MatematicaTED.frm_alumno.resources
+C:\Users\WinUser\Downloads\RepasaMate\MatematicaTED\obj\Debug\MatematicaTED.frm_alumnoAgre.resources
+C:\Users\WinUser\Downloads\RepasaMate\MatematicaTED\obj\Debug\MatematicaTED.Frm_Categoria.resources
+C:\Users\WinUser\Downloads\RepasaMate\MatematicaTED\obj\Debug\MatematicaTED.frm_cuestionario.resources
+C:\Users\WinUser\Downloads\RepasaMate\MatematicaTED\obj\Debug\MatematicaTED.frm_cursos.resources
+C:\Users\WinUser\Downloads\RepasaMate\MatematicaTED\obj\Debug\MatematicaTED.frm_desafio.resources
+C:\Users\WinUser\Downloads\RepasaMate\MatematicaTED\obj\Debug\MatematicaTED.frm_DesafioFIn.resources
+C:\Users\WinUser\Downloads\RepasaMate\MatematicaTED\obj\Debug\MatematicaTED.frm_DesafioRecibidos.resources
+C:\Users\WinUser\Downloads\RepasaMate\MatematicaTED\obj\Debug\MatematicaTED.frm_docente.resources
+C:\Users\WinUser\Downloads\RepasaMate\MatematicaTED\obj\Debug\MatematicaTED.frm_editor.resources
+C:\Users\WinUser\Downloads\RepasaMate\MatematicaTED\obj\Debug\MatematicaTED.frm_estDocente.resources
+C:\Users\WinUser\Downloads\RepasaMate\MatematicaTED\obj\Debug\MatematicaTED.frm_login.resources
+C:\Users\WinUser\Downloads\RepasaMate\MatematicaTED\obj\Debug\MatematicaTED.frm_pantallaInicial.resources
+C:\Users\WinUser\Downloads\RepasaMate\MatematicaTED\obj\Debug\MatematicaTED.Frm_Preguntas.resources
+C:\Users\WinUser\Downloads\RepasaMate\MatematicaTED\obj\Debug\MatematicaTED.Frm_PreguntasDsf.resources
+C:\Users\WinUser\Downloads\RepasaMate\MatematicaTED\obj\Debug\MatematicaTED.frm_RevisarCues.resources
+C:\Users\WinUser\Downloads\RepasaMate\MatematicaTED\obj\Debug\MatematicaTED.frm_verCues.resources
+C:\Users\WinUser\Downloads\RepasaMate\MatematicaTED\obj\Debug\MatematicaTED.Resources.resources
+C:\Users\WinUser\Downloads\RepasaMate\MatematicaTED\obj\Debug\MatematicaTED.vbproj.GenerateResource.Cache
+C:\Users\WinUser\Downloads\RepasaMate\MatematicaTED\obj\Debug\MatematicaTED.exe
+C:\Users\WinUser\Downloads\RepasaMate\MatematicaTED\obj\Debug\MatematicaTED.xml
+C:\Users\WinUser\Downloads\RepasaMate\MatematicaTED\obj\Debug\MatematicaTED.pdb

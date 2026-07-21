@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+
+<style>
+    .header {
+        position: sticky;
+        top: 0;
+        align-content: center;   
+    } 
+</style>
+
+<div class="container">
+  <div class="row">
+    <h2>Ejercicio 49</h2>
+  </div>
+</div>
+<div class="container card-body py-4 px-5">
+    <div class="row">
+        <h4>Historial</h4>
+        <span><small>De un total de {{total_iterations}} dias simulados</small></span>
+        <div class="col">
+            <table class='table table-bordered'>
+                <thead style="position: sticky; top: 0" class="thead-light">
+                    <tr>
+                        <th class="header" colspan="3" scope="colgroup" align="center"> </th>
+                        <th class="header" colspan="3" scope="colgroup" align="center"> </th>
+                        <th class="header" colspan="10" scope="colgroup">Cabinas</th>
+                        <th class="header" colspan="5" scope="colgroup" align="center"> </th>                                      
+                        <th class="header" colspan="9" scope="colgroup" align="center"> </th>
+                    </tr>
+                    <tr>
+                        <th class="header" colspan="3" scope="colgroup" align="center">Datos de Simulacion</th>
+                        <th class="header" colspan="3" scope="colgroup" align="center">Llegada Clientes</th>
+                        <th class="header" colspan="2" scope="colgroup" align="center"> </th>
+                        <th class="header" colspan="4" scope="colgroup" align="center">CABINA 1</th>
+                        <th class="header" colspan="4" scope="colgroup" align="center">CABINA 2</th>
+                        <th class="header" colspan="5" scope="colgroup" align="center">Caja</th>                                      
+                        <th class="header" colspan="9" scope="colgroup" align="center">Estadísticos</th>
+                        <th class="header" scope="col"> <hr width="3" size="50"/> </th>
+                        {% for cli in clientes %}
+                        <th class="header" colspan="2" scope="colgroup">{{cli}}</th>
+                        {% endfor %}
+                    </tr>
+                    
+                    <tr>
+                        <th class="header" scope="col">Iteracion</th>
+                        <th class="header" scope="col">Tiempo actual (en Minutos)</th>
+                        <th class="header" scope="col">Tipo de Evento</th>
+
+                        <th class="header" scope="col">Random</th>
+                        <th class="header" scope="col">Tiempo entre llegadas</th>
+                        <th class="header" scope="col">Próxima llegada</th>
+
+                        <th class="header" scope="col">Duracion llegada a Cabina</th>
+                        <th class="header" scope="col">Random Llamada</th>
+                        <th class="header" scope="col">Próxima llegada</th>
+                        <th class="header" scope="col">Duracion Llamada</th>
+                        <th class="header" scope="col">Finalizacion Llamada</th>
+                        <th class="header" scope="col">Estado</th>
+                        <th class="header" scope="col">Próxima llegada</th>
+                        <th class="header" scope="col">Duracion Llamada</th>
+                        <th class="header" scope="col">Finalizacion Llamada</th>
+                        <th class="header" scope="col">Estado</th>
+                        
+                        <th class="header" scope="col">Duracion Cobro</th>
+                        <th class="header" scope="col">Finalizacion del Cobro</th>
+                        <th class="header" scope="col">Costo de la Llamada</th>
+                        <th class="header" scope="col">Estado</th>
+                        <th class="header" scope="col">Cola</th>
+                        
+                                                
+                        <th class="header" scope="col">Cantidad de Personas que no consiguen Cabina</th>
+                        <th class="header" scope="col">Cantidad de Personas Totales</th>
+                        <th class="header" scope="col">Porcentaje de Personas que no consiguen Cabina</th>
+                        <th class="header" scope="col">Tamaño Maximo de la Cola en Caja</th>                        
+                        <th class="header" scope="col">Duracion Llamada AC</th>
+                        <th class="header" scope="col">Cantidad Llamadas Finalizadas</th>
+                        <th class="header" scope="col">Tiempo Promedio de las Llamadas</th>
+                        <th class="header" scope="col">Dinero Total en Caja</th>
+                        <th class="header" scope="col">Ganancia Neta</th>
+
+                        <th class="header" scope="col"> <hr width="3" size="50"/> </th>
+                        {% for cli in clientes %}
+                        <th scope="col">Duracion Llamada</th> 
+                        <th scope="col">Estado</th>                               
+                        {% endfor %}
+                    </tr>
+                
+                </thead>
+                <tbody>
+                    {% for item in history %}
+                    {% if forloop.counter0|divisibleby:"2" %}
+                    <tr style="background-color:lightgray">
+                    {% else %}
+                    <tr>
+                    {% endif %}
+                        <th>{{item.iteration}}</th>
+                        <td> {{item.current_time|floatformat:4}}</td>
+                        <td> {{item.event_type}}</td>
+                        
+                        <td>{{item.Cliente_arrival_random|default_if_none:""|floatformat:4}}</td>
+                        <td>{{item.Cliente_time_between_arrivals|default_if_none:""|floatformat:4}}</td>
+                        <th scope="row"> {{item.Cliente_arrival|floatformat:4}}</th>
+
+                        <td> {{item.Cabina_arrival_time_operation|default_if_none:""|floatformat:4}}</td>
+                        <td>{{item.Operacion_llamadas_random|default_if_none:""|floatformat:4}}</td>
+                        <th scope="row"> {{item.Cabina_arrival_1|default_if_none:""|floatformat:4}}</th>
+                        <td>{{item.Operacion_llamada_time_operation_1|default_if_none:""|floatformat:4}}</td>
+                        <th scope="row"> {{item.Llamada_1_operacion_finish|default_if_none:""|floatformat:4}}</th>
+                        <td>{{item.Cabina_1_status}}</td>
+                        <th scope="row"> {{item.Cabina_arrival_2|default_if_none:""|floatformat:4}}</th>
+                        <td>{{item.Operacion_llamada_time_operation_2|default_if_none:""|floatformat:4}}</td>
+                        <th scope="row"> {{item.Llamada_2_operacion_finish|default_if_none:""|floatformat:4}}</th>
+                        <td>{{item.Cabina_2_status}}</td>
+
+                        <td>{{item.Operacion_cobro_time_operation|default_if_none:""|floatformat:4}}</td>
+                        <th scope="row"> {{item.Cobro_operacion_finish|default_if_none:""|floatformat:4}}</th>
+                        <td>{{item.Cobro_costo_llamada|default_if_none:""|floatformat:2}}</td>
+                        <td>{{item.Caja_status}}</td>
+                        <td>{{item.Cola_caja}}</td>
+
+                        <td>{{item.Personas_no_consiguen_cabina}}</td>                       
+                        <td>{{item.Personas_totales}}</td>
+                        <td>{{item.Porcentaje_personas_no_consiguen_cabina|floatformat:2}}%</td>                       
+                        <td>{{item.Cola_maxima_caja}}</td>
+                        <td>{{item.Llamada_duracion_AC|floatformat:4}}</td>                       
+                        <td>{{item.Cantidad_llamadas}}</td>
+                        <td>{{item.Tiempo_promedio_llamadas|floatformat:4}}</td>                       
+                        <td>{{item.Dinero_total_caja|floatformat:2}}</td>
+                        <td>{{item.Ganancia_neta|floatformat:2}}</td>                     
+                        <th scope="col"> <hr width="3" size="50"/> </th>
+
+                        {% for cli in clientes %}
+                        {% if forloop.counter0 == item.start_clientes%}
+                        {% for cli in item.clientes %}
+                        {% if cli.status != 'Destruido'%}
+                        <td> {{cli.duracionLlamada|default_if_none:"-"}}</td>
+                        <td> {{cli.status}}</td>            
+                        {% else %}
+                        <td></td>
+                        <td></td>
+                        {% endif %}
+                        {% endfor %}
+                        {% else %}
+                        <td></td>
+                        <td></td>
+                        {% endif %}
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="row">
+            <h4>Resultados</h4>
+            <span>Porcentaje de Personas que no consiguieron Cabina: {{porcentaje_personas_no_consiguen_cabina|floatformat:2}}%</span>
+            <span>Tamaño Maximo de la cola en Caja: {{max_cola_caja}} personas</span>
+            <span>Tiempo promedio de las Llamadas Finalizadas: {{tiempo_promedio_llamadas|floatformat:2}} minutos</span>
+            <span>Dinero Total en la Caja: {{dinero_total_caja|floatformat:4}} centavos</span>
+            <span>Ganancia Neta del Locutorio: {{ganancia_neta|floatformat:4}} centavos</span>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

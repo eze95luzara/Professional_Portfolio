@@ -1,0 +1,162 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <h3>TP5</h3>
+  <div class="row">
+    <div class="col-12">
+      <div class="card card-body shadow">
+        <form action="{% url 'tp5:simulate' %}" method="post" class="row">
+          {% csrf_token %}
+          <h4>Parametros</h4>
+          <div class="col-6">
+            <div class="row">
+              <h5>Generales:</h5>         
+              <div class="col-6 mb-3">
+                <div class="form-floating">
+                  <input type="number" class="form-control form-control-sm" name="total_iterations" id="total_iterations" placeholder="Total de filas" min=0 required>
+                  <label for="total_iterations" class="form-label">Total de iteraciones</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="row">
+              <h5>Historial:</h5>
+              <div class="col-6 mb-3">
+                <div class="form-floating">
+                  <input type="number" class="form-control form-control-sm" name="iterations_to_show" id="iterations_to_show" placeholder="Cantidad de iteraciones" min=0 required>
+                  <label for="iterations_to_show" class="form-label">Cantidad de iteraciones (i)</label>
+                </div>
+              </div>
+            
+              <div class="col-6 mb-3">
+                <div class="form-floating">
+                  <input type="number" class="form-control form-control-sm" name="from_time" id="from_time" placeholder="Desde el dia" min=0 required>
+                  <label for="from_time" class="form-label">Desde la hora (j)</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 pt-3 mt-3 border-top">
+            <div class="row">
+              <h5>Variables de problema:</h5>
+              <div class="col-6">
+                <div class="row">
+                  <div class="col-12 mb-3 mt-5">
+                    <div class="form-floating">
+                      <input type="number" class="form-control form-control-sm" name="cleaning_time" id="cleaning_time" placeholder="Demora de la tarea de limpieza" min=0 step="1" required value=10>
+                      <label for="cleaning_time" class="form-label">Demora de la tarea de limpieza</label>
+                    </div>
+                  </div>
+                  <div class="col-12 mb-3">
+                    <h6>Futbol</h6>
+                    <div class="row">
+                        <div class="col-6">
+                            <span><strong>Llegadas (Exp. Negativa)</strong></span>
+                            <div class="form-floating">
+                              <input type="number" class="form-control form-control-sm" name="football_mean" id="football_mean" placeholder="Media" min=0 step="0.000001" required value=600>
+                              <label for="football_mean" class="form-label">Media</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <span><strong>Ocupacion de cancha (Normal)</strong></span>
+                            <div class="form-floating d-flex">
+                              <input type="number" class="form-control form-control-sm" name="football_ocupation_mean" id="football_ocupation_mean" placeholder="Media" min=0 step="0.000001" value=90 required>
+                              <label for="football_ocupation_mean" class="form-label">Media</label>
+                            </div>
+                            <div class="form-floating d-flex">
+                              <input type="number" class="form-control form-control-sm" name="football_ocupation_standard_deviation" id="football_ocupation_standard_deviation" placeholder="Desviacion estandar" min=0 step="0.000001" value=10 required>
+                              <label for="football_ocupation_standard_deviation" class="form-label">Desviacion Estandar</label>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="col-12 mb-3">
+                    <h6>Handball</h6>
+                    <div class="row">
+                        <div class="col-6">
+                            <span><strong>Llegadas (Normal)</strong></span>
+                            <div class="form-floating d-flex">
+                                <input type="number" class="form-control form-control-sm" name="handball_mean" id="handball_mean" placeholder="Media" min=0 step="0.000001" value=720 required>
+                                <label for="handball_mean" class="form-label">Media</label>
+                              </div>
+                            <div class="form-floating d-flex">
+                                <input type="number" class="form-control form-control-sm" name="handball_standard_deviation" id="handball_standard_deviation" placeholder="Desviacion estandar" min=0 step="0.000001" value=120 required>
+                                <label for="handball_standard_deviation" class="form-label">Desviacion Estandar</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <span><strong>Ocupacion de cancha (Normal)</strong></span>
+                            <div class="form-floating d-flex">
+                              <input type="number" class="form-control form-control-sm" name="handball_ocupation_mean" id="handball_ocupation_mean" placeholder="Media" min=0 step="0.000001" value=80 required>
+                              <label for="handball_ocupation_mean" class="form-label">Media</label>
+                            </div>
+                            <div class="form-floating d-flex">
+                              <input type="number" class="form-control form-control-sm" name="handball_ocupation_standard_deviation" id="handball_ocupation_standard_deviation" placeholder="Desviacion estandar" min=0 step="0.000001" value=20 required>
+                              <label for="handball_ocupation_standard_deviation" class="form-label">Desviacion Estandar</label>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="col-12 mb-3">
+                    <h6>Basketball</h6>
+                    <div class="row">
+                        <div class="col-6">
+                            <span><strong>Llegadas (Normal)</strong></span>
+                            <div class="form-floating d-flex">
+                                <input type="number" class="form-control form-control-sm" name="basketball_mean" id="basketball_mean" placeholder="Media" min=0 step="0.000001" value=480 required>
+                                <label for="basketball_mean" class="form-label">Media</label>
+                              </div>
+                            <div class="form-floating d-flex">
+                                <input type="number" class="form-control form-control-sm" name="basketball_standard_deviation" id="basketball_standard_deviation" placeholder="Desviacion estandar" min=0 step="0.000001" value=120 required>
+                                <label for="basketball_standard_deviation" class="form-label">Desviacion Estandar</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <span><strong>Ocupacion de cancha (Uniforme)</strong></span>
+                            <div class="form-floating d-flex">
+                              <input type="number" class="form-control form-control-sm" name="basketball_ocupation_mean" id="basketball_ocupation_mean" placeholder="Media" min=0 step="0.000001" value=100 required>
+                              <label for="basketball_ocupation_mean" class="form-label">Media</label>
+                            </div>
+                            <div class="form-floating d-flex">
+                              <input type="number" class="form-control form-control-sm" name="basketball_ocupation_range" id="basketball_ocupation_range" placeholder="Rango (+/-)" min=0 step="0.000001" value=30 required>
+                              <label for="basketball_ocupation_range" class="form-label">Rango (+/-)</label>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 mt-auto text-end">
+            <button type="submit" id="submitBtn" class="btn btn-outline-primary">Generar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  let canPost = false;
+  const updateAbsentTotal = () => {
+    let totalAbsents = 0;
+    document.querySelectorAll("[name='absent']").forEach((item) => {
+      totalAbsents += +item.value
+    });
+   
+    document.querySelector("#inputTotal").innerHTML = totalAbsents;
+
+    canPost = totalAbsents === 100
+    // if (!canPost){
+    //   document.querySelector("#submitBtn").setAttribute("disabled", true)
+    // } else {
+    //   document.querySelector("#submitBtn").removeAttribute("disabled")
+    // }
+  }
+</script>
+{% endblock %}

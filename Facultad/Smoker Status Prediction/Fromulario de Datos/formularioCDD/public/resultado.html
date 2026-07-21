@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultado de la predicción</title>
+    <!-- Agregar enlace al archivo CSS de Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+       body {
+           background-color: #f8f9fa; /* Color de fondo */
+       }
+       .no-fumadora {
+            font-weight: bold;
+            color: #0066cc; /* Color para los títulos */           
+            text-align: center;
+
+       }
+       .fumadora {
+            font-weight: bold;
+            color: #ca3406; /* Color para los títulos */           
+            text-align: center;
+       }
+   </style>
+</head>
+<body>
+    <h1 class="text-center display-4">Resultado de la predicci&oacute;n:</h1>
+    <div >
+        {% if resultado == 0 %}
+            <h1 class="no-fumadora">La persona no es fumadora.</h1>
+        {% elif resultado == 1 %}
+            <h1 class="fumadora">La persona s&iacute; fuma. </h1>
+        {% else %}
+            <!-- Manejar otros valores si es necesario -->
+            <h1 class="fumadora">Resultado no v&aacute;lido.</h1>
+        {% endif %}
+    </div> 
+    <!-- Enlace a Bootstrap JS (opcional) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

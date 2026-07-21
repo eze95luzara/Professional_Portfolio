@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=eq1\ eq2\ goles1\ goles2
+comment0.target=PartidoJugado(Equipo,\ Equipo,\ int,\ int)
+comment0.text=\r\n\ Constructor\ para\ objetos\ de\ la\ clase\ PartidoJugado\r\n\ @param\ \ eq1\ equipo\ 1\r\n\ @param\ \ eq2\ equipo\ 2\r\n\ @param\ \ goles1\ goles\ anotados\ por\ el\ equipo\ 1\r\n\ @param\ \ goles2\ goles\ anotados\ por\ el\ equipo\ 2\r\n
+comment1.params=p\ goles1\ goles2
+comment1.target=PartidoJugado(Partido,\ int,\ int)
+comment1.text=\r\n\ Constructor\ para\ objetos\ de\ la\ clase\ PartidoJugado\r\n\ @param\ \ p\ datos\ del\ partido\ antes\ de\ jugarse\r\n\ @param\ \ goles1\ goles\ anotados\ por\ el\ equipo\ 1\r\n\ @param\ \ goles2\ goles\ anotados\ por\ el\ equipo\ 2\r\n
+comment2.params=
+comment2.target=Equipo\ getGanador()
+comment2.text=\r\n\ M\u00E9todo\ para\ obtener\ al\ equipo\ ganador\ del\ partido\r\n\ \r\n\ @return\ \ equipo\ ganador\r\n
+comment3.params=
+comment3.target=Equipo\ getPerdedor()
+comment3.text=\r\n\ M\u00E9todo\ para\ obtener\ al\ equipo\ perdedor\ del\ partido\r\n\ \r\n\ @return\ \ equipo\ perdedor\r\n
+numComments=4

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>TPI1 - Grupo 5</title>
+  <!-- CSS only Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+ </head>
+ <body style="background-color: grey;">
+  
+  <div class="container">
+      <h1 style= "font-style: oblique;" align="center">Completar con datos a generar</h1>
+      <h5 style="background-color: rgb(221, 224, 8);">Si se dejan campos vacíos de G, K y C el sistema elegirá valores por defecto</h5>
+    <div class="container"  style="width: 450px;">
+      <form method = "POST" align="right">
+        {{form.as_p}}
+        {% csrf_token %}
+      <div align="center"> <input  type="submit" class="btn btn-primary" value="Calcular"/> </div>
+      </form>
+    </div>
+  </div>
+ </body>
+</html>

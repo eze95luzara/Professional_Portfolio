@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2142F004-B62D-43B6-9EC6-D610FDA27638}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>MatematicaTED.My.MyApplication</StartupObject>
+    <RootNamespace>MatematicaTED</RootNamespace>
+    <AssemblyName>MatematicaTED</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\WinUser\UTN\Tecnologia Educativa\TPFinal\RepasaMate - Instalador\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>MatematicaTED.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>MatematicaTED.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>947BF8E1B58EB37408BF1E3D7A56F7685717F1CC</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>RepasaMate_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clases\consulta.vb" />
+    <Compile Include="Clases\llenado.vb" />
+    <Compile Include="frm_alumnoAgre.Designer.vb">
+      <DependentUpon>frm_alumnoAgre.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_alumnoAgre.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Categoria.Designer.vb">
+      <DependentUpon>Frm_Categoria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Categoria.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_DesafioRecibido.Designer.vb">
+      <DependentUpon>frm_DesafioRecibido.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_DesafioRecibido.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_DesafioFIn.Designer.vb">
+      <DependentUpon>frm_DesafioFIn.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_DesafioFIn.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_estAlumno.Designer.vb">
+      <DependentUpon>frm_estAlumno.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_estAlumno.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Preguntas.Designer.vb">
+      <DependentUpon>Frm_Preguntas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Preguntas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_PreguntasDsf.Designer.vb">
+      <DependentUpon>Frm_PreguntasDsf.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_PreguntasDsf.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_VerCues.Designer.vb">
+      <DependentUpon>frm_VerCues.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_VerCues.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_alumno.Designer.vb">
+      <DependentUpon>frm_alumno.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_alumno.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_cuestionario.Designer.vb">
+      <DependentUpon>frm_cuestionario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_cuestionario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_cursos.Designer.vb">
+      <DependentUpon>frm_cursos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_cursos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_desafio.Designer.vb">
+      <DependentUpon>frm_desafio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_desafio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_docente.Designer.vb">
+      <DependentUpon>frm_docente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_docente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_editor.Designer.vb">
+      <DependentUpon>frm_editor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_editor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_estDocente.Designer.vb">
+      <DependentUpon>frm_estDocente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_estDocente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_login.Designer.vb">
+      <DependentUpon>frm_login.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_pantallaInicial.Designer.vb">
+      <DependentUpon>frm_pantallaInicial.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_pantallaInicial.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_RevisarCues.Designer.vb">
+      <DependentUpon>frm_RevisarCues.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_RevisarCues.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frm_alumno.resx">
+      <DependentUpon>frm_alumno.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_alumnoAgre.resx">
+      <DependentUpon>frm_alumnoAgre.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Categoria.resx">
+      <DependentUpon>Frm_Categoria.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_cuestionario.resx">
+      <DependentUpon>frm_cuestionario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_cursos.resx">
+      <DependentUpon>frm_cursos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_desafio.resx">
+      <DependentUpon>frm_desafio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_DesafioFIn.resx">
+      <DependentUpon>frm_DesafioFIn.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_DesafioRecibido.resx">
+      <DependentUpon>frm_DesafioRecibido.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_docente.resx">
+      <DependentUpon>frm_docente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_editor.resx">
+      <DependentUpon>frm_editor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_estAlumno.resx">
+      <DependentUpon>frm_estAlumno.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_estDocente.resx">
+      <DependentUpon>frm_estDocente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_login.resx">
+      <DependentUpon>frm_login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_pantallaInicial.resx">
+      <DependentUpon>frm_pantallaInicial.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Preguntas.resx">
+      <DependentUpon>Frm_Preguntas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_PreguntasDsf.resx">
+      <DependentUpon>Frm_PreguntasDsf.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_RevisarCues.resx">
+      <DependentUpon>frm_RevisarCues.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_VerCues.resx">
+      <DependentUpon>frm_VerCues.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="RepasaMate_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,26 @@
+@charset "UTF-8";
+@use './h-mixin' as m;
+@use './h-fonts' as f;
+@use './h-breakpoint' as bp;
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree&family=Imprima&display=swap');
+
+
+.body_header{
+    @include m.flexColumn;
+    //background-image: url('../public/img/background3.jpg');
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)), url('../public/img/background3.jpg');
+    background-size: cover;
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 30px;
+    text-align: center;
+    height: 150px;
+    //background-color: aqua;
+}
+
+.Header__titulo{
+    padding: 0px;
+    margin: 0px;
+    color: #09244B;
+}

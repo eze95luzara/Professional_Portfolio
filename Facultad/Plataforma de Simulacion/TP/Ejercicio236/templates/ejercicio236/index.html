@@ -1,0 +1,201 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <h3>Ejercicio 236</h3>
+  <div class="row">
+    <div class="col-12">
+      <div class="card card-body shadow">
+        <form action="{% url 'ejercicio236:simulate' %}" method="post" class="row">
+          {% csrf_token %}
+          <h4>Parametros</h4>
+          <div class="col-6">
+            <div class="row">
+              <h5>Generales:</h5>         
+              <div class="col-6 mb-3">
+                <div class="form-floating">
+                  <input type="number" class="form-control form-control-sm" name="total_clientes_retirados" id="total_clientes_retirados" placeholder="Total de filas" min=0 required>
+                  <label for="total_clientes_retirados" class="form-label">Total de Personas Retiradas</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="row">
+              <h5>Historial:</h5>
+              <div class="col-6 mb-3">
+                <div class="form-floating">
+                  <input type="number" class="form-control form-control-sm" name="iterations_to_show" id="iterations_to_show" placeholder="Cantidad de iteraciones" min=0 required>
+                  <label for="iterations_to_show" class="form-label">Cantidad de iteraciones (i)</label>
+                </div>
+              </div>
+            
+              <div class="col-6 mb-3">
+                <div class="form-floating">
+                  <input type="number" class="form-control form-control-sm" name="from_time" id="from_time" placeholder="Desde el dia" min=0 required>
+                  <label for="from_time" class="form-label">Desde la hora (j)</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 pt-3 mt-3 border-top">
+            <div class="row">
+              <h5>Variables de problema:</h5>
+              <div class="col-6">
+                <div class="row">
+
+                  <div class="col-12 mb-3">
+                    <h6>Llegada Cliente (Uniforme)</h6>                    
+                        <div class="col-6">
+                            <div class="form-floating d-flex">
+                              <input type="number" class="form-control form-control-sm" name="llegada_cliente_mean" id="llegada_cliente_mean" placeholder="Media" min=0 step="0.000001" value=10 required>
+                              <label for="llegada_cliente_mean" class="form-label">Media</label>
+                            </div>
+                            <div class="form-floating d-flex">
+                              <input type="number" class="form-control form-control-sm" name="llegada_cliente_range" id="llegada_cliente_range" placeholder="Rango (+/-)" min=0 step="0.000001" value=2 required>
+                              <label for="llegada_cliente_range" class="form-label">Rango (+/-)</label>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                 
+                  <div class="col-12 mb-3">
+                    <h6>Atencion de Mesa de Informes (Uniforme)</h6>                    
+                        <div class="col-6">
+                            <div class="form-floating d-flex">
+                              <input type="number" class="form-control form-control-sm" name="atencion_informes_mean" id="atencion_informes_mean" placeholder="Media" min=0 step="0.000001" value=9 required>
+                              <label for="atencion_informes_mean" class="form-label">Media</label>
+                            </div>
+                            <div class="form-floating d-flex">
+                              <input type="number" class="form-control form-control-sm" name="atencion_informes_range" id="atencion_informes_range" placeholder="Rango (+/-)" min=0 step="0.000001" value=5 required>
+                              <label for="atencion_informes_range" class="form-label">Rango (+/-)</label>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 mb-3">
+                    <h6>Atencion de Mesa de Reservas (Uniforme)</h6>                    
+                        <div class="col-6">
+                            <div class="form-floating d-flex">
+                              <input type="number" class="form-control form-control-sm" name="atencion_reservas_mean" id="atencion_reservas_mean" placeholder="Media" min=0 step="0.000001" value=7 required>
+                              <label for="atencion_reservas_mean" class="form-label">Media</label>
+                            </div>
+                            <div class="form-floating d-flex">
+                              <input type="number" class="form-control form-control-sm" name="atencion_reservas_range" id="atencion_reservas_range" placeholder="Rango (+/-)" min=0 step="0.000001" value=2 required>
+                              <label for="atencion_reservas_range" class="form-label">Rango (+/-)</label>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 mb-3">
+                    <h6>Llegada a Mesa de Informes (Uniforme) (Seg.)</h6>                    
+                        <div class="col-6">
+                            <div class="form-floating d-flex">
+                              <input type="number" class="form-control form-control-sm" name="llegada_mesa_informes_mean" id="llegada_mesa_informes_mean" placeholder="Media" min=0 step="0.000001" value=5 required>
+                              <label for="llegada_mesa_informes_mean" class="form-label">Media</label>
+                            </div>
+                            <div class="form-floating d-flex">
+                              <input type="number" class="form-control form-control-sm" name="llegada_mesa_informes_range" id="llegada_mesa_informes_range" placeholder="Rango (+/-)" min=0 step="0.000001" value=2 required>
+                              <label for="llegada_mesa_informes_range" class="form-label">Rango (+/-)</label>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 mb-3">
+                    <h6>Llegada a Mesa de Reservas (Uniforme) (Seg.)</h6>                    
+                        <div class="col-6">
+                            <div class="form-floating d-flex">
+                              <input type="number" class="form-control form-control-sm" name="llegada_mesa_reservas_mean" id="llegada_mesa_reservas_mean" placeholder="Media" min=0 step="0.000001" value=10 required>
+                              <label for="llegada_mesa_reservas_mean" class="form-label">Media</label>
+                            </div>
+                            <div class="form-floating d-flex">
+                              <input type="number" class="form-control form-control-sm" name="llegada_mesa_reservas_range" id="llegada_mesa_reservas_range" placeholder="Rango (+/-)" min=0 step="0.000001" value=5 required>
+                              <label for="llegada_mesa_reservas_range" class="form-label">Rango (+/-)</label>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 mb-3">
+                    <h6>Llegada a la Salida (Uniforme) (Seg.)</h6>                    
+                        <div class="col-6">
+                            <div class="form-floating d-flex">
+                              <input type="number" class="form-control form-control-sm" name="llegada_salida_mean" id="llegada_mesa_salida_mean" placeholder="Media" min=0 step="0.000001" value=20 required>
+                              <label for="llegada_salida_mean" class="form-label">Media</label>
+                            </div>
+                            <div class="form-floating d-flex">
+                              <input type="number" class="form-control form-control-sm" name="llegada_salida_range" id="llegada_salida_range" placeholder="Rango (+/-)" min=0 step="0.000001" value=5 required>
+                              <label for="llegada_salida_range" class="form-label">Rango (+/-)</label>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 mb-3">
+                    <h6>Llegada Cliente Adicional (directo a Reservas) (Uniforme)</h6>                    
+                        <div class="col-6">
+                            <div class="form-floating d-flex">
+                              <input type="number" class="form-control form-control-sm" name="ingreso_adicional_personas_mean" id="ingreso_adicional_personas_mean" placeholder="Media" min=0 step="0.000001" value=15 required>
+                              <label for="ingreso_adicional_personas_mean" class="form-label">Media</label>
+                            </div>
+                            <div class="form-floating d-flex">
+                              <input type="number" class="form-control form-control-sm" name="ingreso_adicional_personas_range" id="ingreso_adicional_personas_range" placeholder="Rango (+/-)" min=0 step="0.000001" value=3 required>
+                              <label for="ingreso_adicional_personas_range" class="form-label">Rango (+/-)</label>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 mb-3">
+                    <h6>Llegada a Mesa de Reservas (Directo desde la Entrada) (Uniforme) (Seg.)</h6>                    
+                        <div class="col-6">
+                            <div class="form-floating d-flex">
+                              <input type="number" class="form-control form-control-sm" name="llegada_mesa_reservas_adicional_mean" id="llegada_mesa_reservas_adicional_mean" placeholder="Media" min=0 step="0.000001" value=15 required>
+                              <label for="llegada_mesa_reservas_adicional_mean" class="form-label">Media</label>
+                            </div>
+                            <div class="form-floating d-flex">
+                              <input type="number" class="form-control form-control-sm" name="llegada_mesa_reservas_adicional_range" id="llegada_mesa_reservas_adicional_range" placeholder="Rango (+/-)" min=0 step="0.000001" value=3 required>
+                              <label for="llegada_mesa_reservas_adicional_range" class="form-label">Rango (+/-)</label>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 mt-auto text-end">
+            <button type="submit" id="submitBtn" class="btn btn-outline-primary">Generar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  let canPost = false;
+  const updateAbsentTotal = () => {
+    let totalAbsents = 0;
+    document.querySelectorAll("[name='absent']").forEach((item) => {
+      totalAbsents += +item.value
+    });
+   
+    document.querySelector("#inputTotal").innerHTML = totalAbsents;
+
+    canPost = totalAbsents === 100
+    // if (!canPost){
+    //   document.querySelector("#submitBtn").setAttribute("disabled", true)
+    // } else {
+    //   document.querySelector("#submitBtn").removeAttribute("disabled")
+    // }
+  }
+</script>
+{% endblock %}

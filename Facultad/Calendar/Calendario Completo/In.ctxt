@@ -1,0 +1,32 @@
+#BlueJ class context
+comment0.params=
+comment0.target=In()
+comment0.text=\r\n\ Constructor\ privado\ implementado\ para\ evitar\ instanciacion\ y\r\n\ derivacion.\r\n
+comment1.params=
+comment1.target=java.lang.String\ readString()
+comment1.text=\r\n\ Metodo\ utilizado\ para\ leer\ cadenas\ de\ caracteres\ que\ no\ contengan\r\n\ espacios.\ Los\ siguientes\ caracteres\ son\ considerados\ espacios\:\r\n\ <ul>\r\n\ \ \ \ \ <li><code>'\ '</code>\:\ espacio\ en\ blanco.\r\n\ \ \ \ \ <li><code>'\\t'</code>\:\ tabulacion\ (tab).\r\n\ \ \ \ \ <li><code>'\\n'</code>\:\ nueva\ linea,\ equivalente\ al\ [Enter]\ (new-line).\r\n\ \ \ \ \ <li><code>'\\r'</code>\:\ retorno\ de\ carro\ (carriage-return).\r\n\ \ \ \ \ <li><code>'\\f'</code>\:\ avance\ de\ pagina\ (form-feed).\r\n\ </ul>\r\n\ @return\ la\ primer\ palabra\ completa\ que\ se\ haya\ introducido.\r\n\ @see\ \#readLine()\r\n
+comment2.params=
+comment2.target=java.lang.String\ readLine()
+comment2.text=\r\n\ Metodo\ utilizado\ para\ leer\ cadenas\ de\ caracteres\ que\ contengan\r\n\ espacios\ en\ blanco\ y/o\ tabulaciones.\r\n\ @return\ la\ linea\ introducida\ hasta\ que\ se\ encuentre\ un\ [Enter].\r\n\ @see\ \#readString()\r\n
+comment3.params=
+comment3.target=int\ readInt()
+comment3.text=\r\n\ Metodo\ utilizado\ para\ leer\ numeros\ enteros\ de\ 32\ bits.\r\n\ @return\ el\ numero\ introducido\ o\ 0\ (cero)\ si\ el\ valor\ introducido\r\n\ no\ puede\ ser\ interpretado\ como\ numero\ entero.\ Esto\ ocurre\ cuando\ \r\n\ se\ introducen\ letras\ o\ signos\ de\ puntuacion\ mezclados\ con\ el\ \r\n\ numero.\r\n\ @see\ \#readLong()\r\n
+comment4.params=
+comment4.target=long\ readLong()
+comment4.text=\r\n\ Metodo\ utilizado\ para\ leer\ numeros\ enteros\ de\ 64\ bits.\r\n\ @return\ el\ numero\ introducido\ o\ 0L\ (cero)\ si\ el\ valor\ introducido\r\n\ no\ puede\ ser\ interpretado\ como\ numero\ entero.\ Esto\ ocurre\ cuando\ \r\n\ se\ introducen\ letras\ o\ signos\ de\ puntuacion\ mezclados\ con\ el\ \r\n\ numero.\r\n\ @see\ \#readInt()\r\n
+comment5.params=
+comment5.target=float\ readFloat()
+comment5.text=\r\n\ Metodo\ utilizado\ para\ leer\ numeros\ reales\ de\ 32\ bits\ de\ \r\n\ precision.\r\n\ @return\ el\ numero\ introducido\ o\ 0.0F\ (cero)\ si\ el\ valor\ introducido\r\n\ no\ puede\ ser\ interpretado\ como\ numero\ entero.\ Esto\ ocurre\ cuando\ \r\n\ se\ introducen\ letras\ o\ signos\ de\ puntuacion\ mezclados\ con\ el\ \r\n\ numero.\ Los\ unicos\ signos\ permitidos\ son\ el\ -\ (menos)\ al\r\n\ comienzo\ del\ numero\ y\ una\ unica\ aparicion\ del\ .\ \r\n\ (punto\ decimal).\r\n\ @see\ \#readDouble()\r\n
+comment6.params=
+comment6.target=double\ readDouble()
+comment6.text=\r\n\ Metodo\ utilizado\ para\ leer\ numeros\ reales\ de\ 64\ bits\ de\ \r\n\ precision.\r\n\ @return\ el\ numero\ introducido\ o\ 0.0\ (cero)\ si\ el\ valor\ introducido\r\n\ no\ puede\ ser\ interpretado\ como\ numero\ entero.\ Esto\ ocurre\ cuando\ \r\n\ se\ introducen\ letras\ o\ signos\ de\ puntuacion\ mezclados\ con\ el\ \r\n\ numero.\ Los\ unicos\ signos\ permitidos\ son\ el\ -\ (menos)\ al\r\n\ comienzo\ del\ numero\ y\ una\ unica\ aparicion\ del\ .\ \r\n\ (punto\ decimal).\r\n\ @see\ \#readFloat()\r\n
+comment7.params=
+comment7.target=char\ readChar()
+comment7.text=\r\n\ Metodo\ utilizado\ para\ leer\ un\ caracter.\r\n\ @return\ el\ primer\ caracter\ de\ la\ cadena\ introducida\ o\ '\\0'\ (caracter\ nulo)\ \r\n\ si\ se\ introdujo\ una\ cadena\ vacia.\r\n\ @see\ \#readString()\r\n
+comment8.params=
+comment8.target=java.lang.String\ getNextToken()
+comment8.text=\r\n\ Metodo\ utilizado\ para\ obtener\ la\ siguiente\ palabra\ (o\ numero)\r\n\ del\ objeto\ parseador\ de\ la\ entrada.\r\n\ @return\ siguiente\ elemento\ del\ parseador\ de\ cadenas,\ considerando\ como\ \r\n\ separadores\ a\ los\ caracteres\ de\ espacio\ (ver\ documentacion\ de\ \r\n\ {@link\ \#readString()\ readString()}).\r\n\ @see\ \#getNextToken(String)\r\n\ @see\ \#st\r\n\ @see\ "Documentacion\ de\ la\ clase\ <code>StringTokenizer</code>\ en\ el\r\n\ sitio\ oficial\ de\ Java\:\ <a\ href\="http\://java.sun.com">http\://java.sun.com</a>."\r\n
+comment9.params=delim
+comment9.target=java.lang.String\ getNextToken(java.lang.String)
+comment9.text=\r\n\ Metodo\ utilizado\ para\ obtener\ el\ siguiente\ elemento\ del\ objeto\ \r\n\ parseador\ de\ la\ entrada.\ Los\ elementos\ estaran\ definidos\ por\ el\ \r\n\ delimitador\ que\ se\ recibe\ como\ parametro.\r\n\ @param\ delim\ delimitador\ a\ utilizar\ durante\ el\ parseo\ de\ la\ entrada.\ Si\r\n\ el\ parametro\ es\ <code>null</code>\ se\ tomarn\ los\ delimitadores\r\n\ indicados\ en\ {@link\ \#readString()\ readString()}.\r\n\ @return\ siguiente\ elemento\ del\ parseador\ de\ cadenas,\ considerando\ como\ \r\n\ separadores\ al\ parametro\ recibido.\r\n\ @see\ \#getNextToken()\r\n\ @see\ \#st\r\n\ @see\ "Documentacion\ de\ la\ clase\ <code>StringTokenizer</code>\ en\ el\r\n\ sitio\ oficial\ de\ Java\:\ <a\ href\="http\://java.sun.com">http\://java.sun.com</a>."\r\n
+numComments=10

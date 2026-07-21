@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=eq1\ eq2
+comment0.target=Partido(Equipo,\ Equipo)
+comment0.text=\r\nConstructor\ para\ objetos\ de\ la\ clase\ Partido
+comment1.params=p
+comment1.target=Partido(Partido)
+comment1.text=\r\n\ Constructor\ copia\ de\ la\ clase\ Partido\r\n
+comment2.params=
+comment2.target=Equipo\ getEquipo1()
+comment2.text=\r\n\ M\u00E9todo\ para\ obtener\ el\ atributo\r\n\ @return\ \ \ \ \ valor\ del\ atributo\ \r\n
+comment3.params=
+comment3.target=Equipo\ getEquipo2()
+comment3.text=\r\n\ M\u00E9todo\ para\ obtener\ el\ atributo\r\n\ @return\ \ \ \ \ valor\ del\ atributo\ \r\n
+comment4.params=
+comment4.target=java.lang.String\ toString()
+comment4.text=\r\n\ M\u00E9todo\ para\ mostrar\ el\ objeto\ en\ modo\ texto\r\n\ @return\ \ \ \ \ texto\ descriptivo\ \r\n
+numComments=5

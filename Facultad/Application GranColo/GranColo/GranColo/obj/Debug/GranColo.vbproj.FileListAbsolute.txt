@@ -1,0 +1,67 @@
+C:\Users\usuario\Dropbox\Facultad\2016\PAV I\TP Integrador\Gran Colo 1.0\GranColo\GranColo\bin\Debug\GranColo.exe.config
+C:\Users\usuario\Dropbox\Facultad\2016\PAV I\TP Integrador\Gran Colo 1.0\GranColo\GranColo\obj\Debug\GranColo.ABM_Jugadores.resources
+C:\Users\usuario\Dropbox\Facultad\2016\PAV I\TP Integrador\Gran Colo 1.0\GranColo\GranColo\obj\Debug\GranColo.MenuPrincipal.resources
+C:\Users\usuario\Dropbox\Facultad\2016\PAV I\TP Integrador\Gran Colo 1.0\GranColo\GranColo\obj\Debug\GranColo.Resources.resources
+C:\Users\usuario\Dropbox\Facultad\2016\PAV I\TP Integrador\Gran Colo 1.0\GranColo\GranColo\obj\Debug\GranColo.vbproj.GenerateResource.Cache
+C:\Users\usuario\Dropbox\Facultad\2016\PAV I\TP Integrador\Gran Colo 1.0\GranColo\GranColo\obj\Debug\GranColo.xml
+C:\Users\usuario\Dropbox\Facultad\2016\PAV I\TP Integrador\Gran Colo 1.0\GranColo\GranColo\bin\Debug\GranColo.exe
+C:\Users\usuario\Dropbox\Facultad\2016\PAV I\TP Integrador\Gran Colo 1.0\GranColo\GranColo\bin\Debug\GranColo.pdb
+C:\Users\usuario\Dropbox\Facultad\2016\PAV I\TP Integrador\Gran Colo 1.0\GranColo\GranColo\bin\Debug\GranColo.xml
+C:\Users\usuario\Dropbox\Facultad\2016\PAV I\TP Integrador\Gran Colo 1.0\GranColo\GranColo\obj\Debug\GranColo.exe
+C:\Users\usuario\Dropbox\Facultad\2016\PAV I\TP Integrador\Gran Colo 1.0\GranColo\GranColo\obj\Debug\GranColo.pdb
+C:\Users\usuario\Dropbox\Facultad\2016\PAV I\TP Integrador\Gran Colo 1.0\GranColo\GranColo\obj\Debug\GranColo.ABM_Usuarios.resources
+C:\Users\usuario\Dropbox\Facultad\2016\PAV I\TP Integrador\Gran Colo 1.0\GranColo\GranColo\obj\Debug\GranColo.vbprojResolveAssemblyReference.cache
+C:\Users\usuario\Dropbox\Facultad\2016\PAV I\TP Integrador\Gran Colo 1.0\GranColo\GranColo\obj\Debug\GranColo.ABM_Clubes.resources
+C:\Users\usuario\Dropbox\Facultad\2016\PAV I\TP Integrador\Gran Colo 1.0\GranColo\GranColo\obj\Debug\GranColo.ABM_Torneos.resources
+C:\Users\usuario\Dropbox\Facultad\2016\PAV I\TP Integrador\Gran Colo 1.0\GranColo\GranColo\obj\Debug\GranColo.ABM_Posiciones.resources
+C:\Users\usuario\Dropbox\Facultad\2016\PAV I\TP Integrador\Gran Colo 1.0\GranColo\GranColo\obj\Debug\GranColo.ABM_Fechas.resources
+C:\Users\usuario\Dropbox\Facultad\2016\PAV I\TP Integrador\Gran Colo 1.0\GranColo\GranColo\obj\Debug\GranColo.ABM_Equipos.resources
+C:\Users\usuario\Dropbox\Facultad\2016\PAV I\TP Integrador\Gran Colo 1.0\GranColo\GranColo\obj\Debug\GranColo.ABM_Estados.resources
+C:\Users\usuario\Dropbox\Facultad\2016\PAV I\TP Integrador\Gran Colo 1.0\GranColo\GranColo\obj\Debug\GranColo.ABM_Partidos.resources
+C:\Users\usuario\Dropbox\Facultad\2016\PAV I\TP Integrador\Gran Colo 1.0\GranColo\GranColo\obj\Debug\GranColo.PRO_RegistrarEstadoJugador.resources
+C:\Users\WinUser\Desktop\GranColo\GranColo\bin\Debug\GranColo.exe.config
+C:\Users\WinUser\Desktop\GranColo\GranColo\obj\Debug\GranColo.exe
+C:\Users\WinUser\Desktop\GranColo\GranColo\obj\Debug\GranColo.xml
+C:\Users\WinUser\Desktop\GranColo\GranColo\obj\Debug\GranColo.pdb
+C:\Users\WinUser\Desktop\GranColo\GranColo\bin\Debug\GranColo.exe
+C:\Users\WinUser\Desktop\GranColo\GranColo\bin\Debug\GranColo.pdb
+C:\Users\WinUser\Desktop\GranColo\GranColo\bin\Debug\GranColo.xml
+C:\Users\WinUser\Desktop\GranColo\GranColo\obj\Debug\GranColo.vbprojResolveAssemblyReference.cache
+C:\Users\WinUser\Desktop\GranColo\GranColo\obj\Debug\GranColo.ABM_Clubes.resources
+C:\Users\WinUser\Desktop\GranColo\GranColo\obj\Debug\GranColo.ABM_Equipos.resources
+C:\Users\WinUser\Desktop\GranColo\GranColo\obj\Debug\GranColo.ABM_Estados.resources
+C:\Users\WinUser\Desktop\GranColo\GranColo\obj\Debug\GranColo.ABM_Fechas.resources
+C:\Users\WinUser\Desktop\GranColo\GranColo\obj\Debug\GranColo.ABM_Jugadores.resources
+C:\Users\WinUser\Desktop\GranColo\GranColo\obj\Debug\GranColo.ABM_Partidos.resources
+C:\Users\WinUser\Desktop\GranColo\GranColo\obj\Debug\GranColo.ABM_Posiciones.resources
+C:\Users\WinUser\Desktop\GranColo\GranColo\obj\Debug\GranColo.ABM_Torneos.resources
+C:\Users\WinUser\Desktop\GranColo\GranColo\obj\Debug\GranColo.ABM_Usuarios.resources
+C:\Users\WinUser\Desktop\GranColo\GranColo\obj\Debug\GranColo.MenuPrincipal.resources
+C:\Users\WinUser\Desktop\GranColo\GranColo\obj\Debug\GranColo.PRO_RegistrarEstadoJugador.resources
+C:\Users\WinUser\Desktop\GranColo\GranColo\obj\Debug\GranColo.Resources.resources
+C:\Users\WinUser\Desktop\GranColo\GranColo\obj\Debug\GranColo.vbproj.GenerateResource.Cache
+C:\Users\WinUser\UTN\Programacion de Aplicaciones Visuales 1\GranColo\GranColo\bin\Debug\GranColo.exe.config
+C:\Users\WinUser\UTN\Programacion de Aplicaciones Visuales 1\GranColo\GranColo\obj\Debug\GranColo.exe
+C:\Users\WinUser\UTN\Programacion de Aplicaciones Visuales 1\GranColo\GranColo\obj\Debug\GranColo.xml
+C:\Users\WinUser\UTN\Programacion de Aplicaciones Visuales 1\GranColo\GranColo\obj\Debug\GranColo.pdb
+C:\Users\WinUser\UTN\Programacion de Aplicaciones Visuales 1\GranColo\GranColo\bin\Debug\GranColo.exe
+C:\Users\WinUser\UTN\Programacion de Aplicaciones Visuales 1\GranColo\GranColo\bin\Debug\GranColo.pdb
+C:\Users\WinUser\UTN\Programacion de Aplicaciones Visuales 1\GranColo\GranColo\bin\Debug\GranColo.xml
+C:\Users\WinUser\UTN\Programacion de Aplicaciones Visuales 1\GranColo\GranColo\obj\Debug\GranColo.vbprojResolveAssemblyReference.cache
+C:\Users\WinUser\UTN\Programacion de Aplicaciones Visuales 1\GranColo\GranColo\obj\Debug\GranColo.ABM_Clubes.resources
+C:\Users\WinUser\UTN\Programacion de Aplicaciones Visuales 1\GranColo\GranColo\obj\Debug\GranColo.ABM_Equipos.resources
+C:\Users\WinUser\UTN\Programacion de Aplicaciones Visuales 1\GranColo\GranColo\obj\Debug\GranColo.ABM_Estados.resources
+C:\Users\WinUser\UTN\Programacion de Aplicaciones Visuales 1\GranColo\GranColo\obj\Debug\GranColo.ABM_Fechas.resources
+C:\Users\WinUser\UTN\Programacion de Aplicaciones Visuales 1\GranColo\GranColo\obj\Debug\GranColo.ABM_Jugadores.resources
+C:\Users\WinUser\UTN\Programacion de Aplicaciones Visuales 1\GranColo\GranColo\obj\Debug\GranColo.ABM_Partidos.resources
+C:\Users\WinUser\UTN\Programacion de Aplicaciones Visuales 1\GranColo\GranColo\obj\Debug\GranColo.ABM_Posiciones.resources
+C:\Users\WinUser\UTN\Programacion de Aplicaciones Visuales 1\GranColo\GranColo\obj\Debug\GranColo.ABM_Torneos.resources
+C:\Users\WinUser\UTN\Programacion de Aplicaciones Visuales 1\GranColo\GranColo\obj\Debug\GranColo.ABM_Usuarios.resources
+C:\Users\WinUser\UTN\Programacion de Aplicaciones Visuales 1\GranColo\GranColo\obj\Debug\GranColo.MenuPrincipal.resources
+C:\Users\WinUser\UTN\Programacion de Aplicaciones Visuales 1\GranColo\GranColo\obj\Debug\GranColo.PRO_RegistrarEstadoJugador.resources
+C:\Users\WinUser\UTN\Programacion de Aplicaciones Visuales 1\GranColo\GranColo\obj\Debug\GranColo.Resources.resources
+C:\Users\WinUser\UTN\Programacion de Aplicaciones Visuales 1\GranColo\GranColo\obj\Debug\GranColo.vbproj.GenerateResource.Cache
+C:\Users\WinUser\UTN\Programacion de Aplicaciones Visuales 1\GranColo\GranColo\bin\Debug\GranColo.exe.manifest
+C:\Users\WinUser\UTN\Programacion de Aplicaciones Visuales 1\GranColo\GranColo\bin\Debug\GranColo.application
+C:\Users\WinUser\UTN\Programacion de Aplicaciones Visuales 1\GranColo\GranColo\obj\Debug\GranColo.exe.manifest
+C:\Users\WinUser\UTN\Programacion de Aplicaciones Visuales 1\GranColo\GranColo\obj\Debug\GranColo.application

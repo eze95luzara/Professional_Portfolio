@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+
+<style>
+    .header {
+        position: sticky;
+        top: 0;     
+    } 
+</style>
+
+<div class="container">
+  <div class="row">
+    <h2>Ejercicio 53</h2>
+  </div>
+</div>
+<div class="container">
+    <div class="row">
+        <h4>Historial</h4>
+        <span>De un total de {{total_iterations}} dias simulados</span>
+        <div class="col">
+            <table class='table table-bordered'>
+                <thead style="position: sticky; top: 0" class="thead-light">
+                    <tr>
+                        <th class="header" colspan="3" scope="colgroup" align="center">Datos de Simulacion</th>
+                        <th class="header" colspan="3" scope="colgroup" align="center">Llegada Personas</th>
+                        <th class="header" colspan="1" scope="colgroup" align="center">Suspension de A.M.</th>
+                        <th class="header" colspan="2" scope="colgroup" align="center">Limpieza de Alfombra Magica</th>
+                        <th class="header" colspan="3" scope="colgroup" align="center">Deslizada en Afombra Magica</th>
+                        {% with ''|center:carriles as range %}
+                        {% for _ in range %}
+                        <th class="header" colspan="2" scope="colgroup" align="center">Carril {{forloop.counter}}</th>
+                        {% endfor %}
+                        {% endwith %}
+                        
+                        <th class="header" colspan="4" scope="colgroup" align="center">Estadísticos</th>
+                        <th class="header" scope="col"> <hr width="3" size="50"/> </th>
+                        {% for cli in clientes %}
+                        <th class="header" colspan="3" scope="colgroup">{{cli}}</th>
+                        {% endfor %}
+                    </tr>
+                    <tr>
+                        <th class="header" scope="col">Iteracion</th>
+                        <th class="header" scope="col">Tiempo actual</th>
+                        <th class="header" scope="col"> Tipo de Evento</th>
+                        <th class="header" scope="col">Random</th>
+                        <th class="header" scope="col">Tiempo entre llegadas</th>
+                        <th class="header" scope="col">Próxima llegada</th>
+                        <th class="header" scope="col">Próxima Suspension</th>
+                        <th class="header" scope="col">Próxima Limpieza</th>
+                        <th class="header" scope="col">Fin Limpieza</th>
+                        <th class="header" scope="col">Random</th>
+                        <th class="header" scope="col">Duracion Dezlizada</th>
+                        <th class="header" scope="col">Cola</th>
+                        
+                        {% with ''|center:carriles as range %}
+                        {% for _ in range %}
+                        <th class="header" scope="col">Estado</th>
+                        <th class="header" scope="col">Fin Deslizada</th>
+                        {% endfor %}
+                        {% endwith %}
+
+                        <th class="header" scope="col">Tiempo Espera en Cola</th>
+                        <th class="header" scope="col">Tiempo Espera Maximo en Cola</th>
+                        <th class="header" scope="col">Tamaño de Cola Maxima</th>                        
+                        <th class="header" scope="col">Cantidad de Clientes Deslizados</th> 
+
+                        <th class="header" scope="col"> <hr width="3" size="50"/> </th>
+                        {% for cli in clientes %}
+                        <th scope="col">Numero Carril</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col">Hora Llegada</th>        
+                        {% endfor %}
+                    </tr>
+                
+                </thead>
+                <tbody>
+                    {% for item in history %}
+                    {% if forloop.counter0|divisibleby:"2" %}
+                    <tr style="background-color:lightgray">
+                    {% else %}
+                    <tr>
+                    {% endif %}
+                        <th>{{item.iteration}}</th>
+                        <td> {{item.current_time|floatformat:4}}</td>
+                        <td> {{item.event_type}}</td>
+                        <td>{{item.Cliente_arrival_random|default_if_none:""|floatformat:4}}</td>
+                        <td>{{item.Cliente_time_between_arrivals|default_if_none:""|floatformat:4}}</td>
+                        <th scope="row"> {{item.Cliente_arrival|floatformat:4}}</th>               
+                        <th scope="row"> {{item.Suspension_arrival|default_if_none:""|floatformat:4}}</th>
+                        <th scope="row"> {{item.Limpieza_arrival|default_if_none:""|floatformat:4}}</th>
+                        <th scope="row"> {{item.Limpieza_operacion_finish|default_if_none:""|floatformat:4}}</th>
+                        <td>{{item.Operacion_deslizada_random|default_if_none:""|floatformat:4}}</td>
+                        <td>{{item.Operacion_deslizada_time_operation|default_if_none:""|floatformat:4}}</td>
+                        <td>{{item.Cola}}</td>                       
+                        <td>{{item.Carril_status_1}}</td>
+                        <th scope="row"> {{item.Deslizada_operacion_finish_1|floatformat:4}}</th>
+                        <td>{{item.Carril_status_2}}</td>
+                        <th scope="row"> {{item.Deslizada_operacion_finish_2|floatformat:4}}</th>
+                        <td>{{item.Carril_status_3}}</td>
+                        <th scope="row"> {{item.Deslizada_operacion_finish_3|floatformat:4}}</th>
+                        <td>{{item.Carril_status_4}}</td>
+                        <th scope="row"> {{item.Deslizada_operacion_finish_4|floatformat:4}}</th>                        
+                        <td> {{item.Tiempo_espera|floatformat:4}}</td>
+                        <td> {{item.Tiempo_espera_maxima|floatformat:4}}</td>
+                        <td> {{item.Tamano_cola_maxima}}</td>
+                        <td> {{item.Personas_deslizadas}}</td>                               
+                        <th scope="col"> <hr width="3" size="50"/> </th>
+                        {% for cli in clientes %}
+                        {% if forloop.counter0 == item.start_clientes%}
+                        {% for cli in item.clientes %}
+                        {% if cli.status != 'Destruido'%}
+                        <td> {{cli.numero_carril|default_if_none:"-"}}</td>
+                        <td> {{cli.status}}</td>                        
+                        <td> {{cli.hora_llegada|floatformat:4}}</td>                
+                        {% else %}
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        {% endif %}
+                        {% endfor %}
+                        {% else %}
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        {% endif %}
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <div class="row">
+        <h4>Resultados</h4>
+        <span>Personas que se Deslizaron: {{personas_deslizadas}} personas</span>
+        <span>Uso promedio del Sistema x Persona: {{uso_promedio_sistema_min|floatformat:4}} minutos o {{uso_promedio_sistema_hrs|floatformat:4}} horas</span>
+        <span>Tamaño Maximo de la Cola: {{tamano_cola_maxima}} personas</span>
+        <span>Tiempo Maximo de Espera en la Cola: {{tiempo_espera_cola_maxima|floatformat:4}} minutos o {{tiempo_espera_cola_maxima_hrs|floatformat:4}} horas</span>
+    </div>    
+</div>
+{% endblock %}

@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+
+<style>
+    .header {
+        position: sticky;
+        top: 0;     
+    } 
+</style>
+
+<div class="container">
+  <div class="row">
+    <h2>Ejercicio 236</h2>
+  </div>
+</div>
+<div class="container">
+    <div class="row">
+        <h4>Historial</h4>
+        <span>De un total de {{total_iterations}} dias simulados</span>
+        <div class="col">
+            <table class='table table-bordered'>
+                <thead style="position: sticky; top: 0" class="thead-light">
+                    <tr>
+                        <th class="header" colspan="3" scope="colgroup" align="center">Datos de Simulacion</th>
+                        <th class="header" colspan="3" scope="colgroup" align="center">Llegada Personas</th>
+                        <th class="header" colspan="3" scope="colgroup" align="center">Llegada Persona Adicional</th>
+                        <th class="header" colspan="3" scope="colgroup" align="center">Llegada a Infromes</th>                        
+                        <th class="header" colspan="3" scope="colgroup" align="center">Llegada a Reservas (Directo Desde la Entrada)</th>                        
+                        <th class="header" colspan="5" scope="colgroup" align="center">Mesa de Informes</th>
+                        <th class="header" colspan="2" scope="colgroup" align="center">Desicion de Retirase</th>
+                        <th class="header" colspan="3" scope="colgroup" align="center">Llegada a Reservas</th>
+                        <th class="header" colspan="5" scope="colgroup" align="center">Mesa de Reservas</th>
+                        <th class="header" colspan="4" scope="colgroup" align="center">Llegada a la Salida</th>                 
+                        <th class="header" colspan="1" scope="colgroup" align="center">Estadísticos</th>
+                        <th class="header" scope="col"> <hr width="3" size="50"/> </th>
+                        {% for cli in clientes %}
+                        <th class="header" colspan="1" scope="colgroup">{{cli}}</th>
+                        {% endfor %}
+                    </tr>
+                    <tr>
+                        <th class="header" scope="col">Iteracion</th>
+                        <th class="header" scope="col">Tiempo actual (min)</th>
+                        <th class="header" scope="col"> Tipo de Evento</th>
+                        <th class="header" scope="col">Random</th>
+                        <th class="header" scope="col">Tiempo entre llegadas</th>
+                        <th class="header" scope="col">Próxima llegada</th>
+
+                        <th class="header" scope="col">Random</th>
+                        <th class="header" scope="col">Tiempo entre llegadas</th>
+                        <th class="header" scope="col">Próxima llegada</th>
+
+                        <th class="header" scope="col">Random</th>
+                        <th class="header" scope="col">Tiempo entre llegadas</th>
+                        <th class="header" scope="col">Próxima llegada a Informes</th>
+
+                        <th class="header" scope="col">Random</th>
+                        <th class="header" scope="col">Tiempo entre llegadas</th>
+                        <th class="header" scope="col">Próxima llegada a Reservas</th>
+                        
+                        <th class="header" scope="col">Random</th>
+                        <th class="header" scope="col">Duracion Operacion</th>
+                        <th class="header" scope="col">Fin Atencion Informes</th>
+                        <th class="header" scope="col">Cola</th>
+                        <th class="header" scope="col">Estado</th>
+
+                        <th class="header" scope="col">Random</th>
+                        <th class="header" scope="col">Desicion de Retirarse</th>
+
+                        <th class="header" scope="col">Random</th>
+                        <th class="header" scope="col">Tiempo entre llegadas</th>
+                        <th class="header" scope="col">Próxima llegada a Reservas</th>
+
+                        <th class="header" scope="col">Random</th>
+                        <th class="header" scope="col">Duracion Operacion</th>
+                        <th class="header" scope="col">Fin Atencion Reservas</th>
+                        <th class="header" scope="col">Cola</th>
+                        <th class="header" scope="col">Estado</th>                        
+                        
+                        <th class="header" scope="col">Random</th>
+                        <th class="header" scope="col">Tiempo entre llegadas</th>
+                        <th class="header" scope="col">Próxima llegada a Salida (Informes)</th>
+                        <th class="header" scope="col">Próxima llegada a Salida (Reservas)</th>
+
+                        <th class="header" scope="col">Personas Retiradas</th>
+
+                        <th class="header" scope="col"> <hr width="3" size="50"/> </th>
+                        {% for cli in clientes %}
+                        <th scope="col">Estado</th>       
+                        {% endfor %}
+                    </tr>
+                
+                </thead>
+                <tbody>
+                    {% for item in history %}
+                    {% if forloop.counter0|divisibleby:"2" %}
+                    <tr style="background-color:lightgray">
+                    {% else %}
+                    <tr>
+                    {% endif %}
+                        <th>{{item.iteration}}</th>
+                        <td> {{item.current_time|floatformat:4}}</td>
+                        <td> {{item.event_type}}</td>
+                        <td>{{item.Cliente_arrival_random|default_if_none:""|floatformat:4}}</td>
+                        <td>{{item.Cliente_time_between_arrivals|default_if_none:""|floatformat:4}}</td>
+                        <th scope="row"> {{item.Cliente_arrival|floatformat:4}}</th>
+
+                        <td>{{item.Cliente_adicional_arrival_random|default_if_none:""|floatformat:4}}</td>
+                        <td>{{item.Cliente_adicional_time_between_arrivals|default_if_none:""|floatformat:4}}</td>
+                        <th scope="row"> {{item.Cliente_adicional_arrival|floatformat:4}}</th>
+
+                        <td>{{item.Informes_arrival_random|default_if_none:""|floatformat:4}}</td>
+                        <td>{{item.Informes_time_between_arrivals|default_if_none:""|floatformat:4}}</td>
+                        <th scope="row"> {{item.Informes_arrival|floatformat:4}}</th>
+
+                        <td>{{item.Reservas_arrival_directo_random|default_if_none:""|floatformat:4}}</td>
+                        <td>{{item.Reservas_directo_time_between_arrivals|default_if_none:""|floatformat:4}}</td>
+                        <th scope="row"> {{item.Reservas_directo_arrival|floatformat:4}}</th>
+
+                        <td>{{item.Operacion_informes_random|default_if_none:""|floatformat:4}}</td>
+                        <td>{{item.Operacion_informes_time_operation|default_if_none:""|floatformat:4}}</td>
+                        <th scope="row"> {{item.Informes_operacion_finish|floatformat:4}}</th>
+                        <td>{{item.Cola_informes}}</td>                       
+                        <td>{{item.Informes_status}}</td>
+
+                        <td> {{item.Cliente_retirarse_random|default_if_none:""|floatformat:4}}</td>
+                        <th scope="row"> {{item.Cliente_retirarse_desicion}}</th>
+
+                        <td>{{item.Reservas_arrival_random|default_if_none:""|floatformat:4}}</td>
+                        <td>{{item.Reservas_time_between_arrivals|default_if_none:""|floatformat:4}}</td>
+                        <th scope="row"> {{item.Reservas_arrival|floatformat:4}}</th>
+
+                        <td>{{item.Operacion_reservas_random|default_if_none:""|floatformat:4}}</td>
+                        <td>{{item.Operacion_reservas_time_operation|default_if_none:""|floatformat:4}}</td>
+                        <th scope="row"> {{item.Reservas_operacion_finish|floatformat:4}}</th>
+                        <td>{{item.Cola_reservas}}</td>                       
+                        <td>{{item.Reservas_status}}</td>
+
+                        <td>{{item.Salida_arrival_random|default_if_none:""|floatformat:4}}</td>
+                        <td>{{item.Salida_time_between_arrivals|default_if_none:""|floatformat:4}}</td>
+                        <th scope="row"> {{item.Salida_arrival_1|floatformat:4}}</th> 
+                        <th scope="row"> {{item.Salida_arrival_2|floatformat:4}}</th>                 
+
+                        <td> {{item.Clientes_retirados}}</td> 
+
+                        <th scope="col"> <hr width="3" size="50"/> </th>
+                        {% for cli in clientes %}
+                        {% if forloop.counter0 == item.start_clientes%}
+                        {% for cli in item.clientes %}
+                        {% if cli.status != 'Destruido'%}                
+                        <td> {{cli.status}}</td>                                 
+                        {% else %}
+                        <td></td>                        
+                        {% endif %}
+                        {% endfor %}
+                        {% else %}
+                        <td></td>                        
+                        {% endif %}
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <div class="row">
+        <h4>Resultados</h4>
+        <span>Cantidad de Personas Retiradas: {{clientes_retirados}} personas</span>
+    </div>    
+</div>
+{% endblock %}

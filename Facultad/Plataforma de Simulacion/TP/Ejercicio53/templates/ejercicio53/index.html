@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <h3>Ejercicio 53</h3>
+  <div class="row">
+    <div class="col-12">
+      <div class="card card-body shadow">
+        <form action="{% url 'ejercicio53:simulate' %}" method="post" class="row">
+          {% csrf_token %}
+          <h4>Parametros</h4>
+          <div class="col-6">
+            <div class="row">
+              <h5>Generales:</h5>         
+              <div class="col-6 mb-3">
+                <div class="form-floating">
+                  <input type="number" class="form-control form-control-sm" name="total_iterations" id="total_iterations" placeholder="Total de filas" min=0 required>
+                  <label for="total_iterations" class="form-label">Total de iteraciones</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="row">
+              <h5>Historial:</h5>
+              <div class="col-6 mb-3">
+                <div class="form-floating">
+                  <input type="number" class="form-control form-control-sm" name="iterations_to_show" id="iterations_to_show" placeholder="Cantidad de iteraciones" min=0 required>
+                  <label for="iterations_to_show" class="form-label">Cantidad de iteraciones (i)</label>
+                </div>
+              </div>
+            
+              <div class="col-6 mb-3">
+                <div class="form-floating">
+                  <input type="number" class="form-control form-control-sm" name="from_time" id="from_time" placeholder="Desde el dia" min=0 required>
+                  <label for="from_time" class="form-label">Desde la hora (j)</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 pt-3 mt-3 border-top">
+            <div class="row">
+              <h5>Variables de problema:</h5>
+              <div class="col-6">
+                <div class="row">
+
+                  <div class="col-12 mb-3">
+                    <h6>Llegada Persona (Normal) (Min y Seg)</h6>                    
+                        <div class="col-6">
+                            <div class="form-floating d-flex">
+                              <input type="number" class="form-control form-control-sm" name="llegada_cliente_mean" id="llegada_cliente_mean" placeholder="Media en minutos" min=0 step="0.000001" value=3 required>
+                              <label for="llegada_cliente_mean" class="form-label">Media en minutos</label>
+                            </div>
+                            <div class="form-floating d-flex">
+                              <input type="number" class="form-control form-control-sm" name="llegada_cliente_deviation" id="llegada_cliente_deviation" placeholder="Varianza en segundos" min=0 step="0.000001" value=45 required>
+                              <label for="llegada_cliente_deviation" class="form-label">Varianza en segundos</label>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                 
+                  <div class="col-12 mb-3">
+                    <h6>Duracion Deslizamiento Persona (Uniforme) </h6>                    
+                        <div class="col-6">
+                            <div class="form-floating d-flex">
+                              <input type="number" class="form-control form-control-sm" name="duracion_deslizamiento_mean" id="duracion_deslizamiento_mean" placeholder="Media" min=0 step="0.000001" value=12 required>
+                              <label for="duracion_deslizamiento_mean" class="form-label">Media</label>
+                            </div>
+                            <div class="form-floating d-flex">
+                              <input type="number" class="form-control form-control-sm" name="duracion_deslizamiento_range" id="duracion_deslizamiento_range" placeholder="Rango (+/-)" min=0 step="0.000001" value=4 required>
+                              <label for="duracion_deslizamiento_range" class="form-label">Rango (+/-)</label>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 mb-3">
+                    <h6>Proxima Suspension de la Alfombra Magica (Constante)</h6>                    
+                        <div class="col-6">
+                            <div class="form-floating d-flex">
+                              <input type="number" class="form-control form-control-sm" name="proxima_suspension_cte" id="proxima_suspension_cte" placeholder="valor en minutos" min=0 step="0.000001" value=20 required>
+                              <label for="proxima_suspension_cte" class="form-label">Valor en Minutos</label>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 mb-3">
+                    <h6>Proxima Limpieza de la Alfombra Magica (Constante) (Hrs.)</h6>                    
+                        <div class="col-6">
+                            <div class="form-floating d-flex">
+                              <input type="number" class="form-control form-control-sm" name="proxima_limpieza_cte" id="proxima_limpieza_cte" placeholder="valor en horas" min=0 step="0.000001" value=4 required>
+                              <label for="proxima_limpieza_cte" class="form-label">Valor en Horas</label>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 mb-3">
+                    <h6>Duracion de Limpieza de la Alfombra Magica (Constante)</h6>                    
+                        <div class="col-6">
+                            <div class="form-floating d-flex">
+                              <input type="number" class="form-control form-control-sm" name="duracion_limpieza_cte" id="duracion_limpieza_cte" placeholder="valor en minutos" min=0 step="0.000001" value=20 required>
+                              <label for="duracion_limpieza_cte" class="form-label">Valor en Minutos</label>
+                            </div>
+                        </div>
+                    </div>
+                  </div>                  
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 mt-auto text-end">
+            <button type="submit" id="submitBtn" class="btn btn-outline-primary">Generar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  let canPost = false;
+  const updateAbsentTotal = () => {
+    let totalAbsents = 0;
+    document.querySelectorAll("[name='absent']").forEach((item) => {
+      totalAbsents += +item.value
+    });
+   
+    document.querySelector("#inputTotal").innerHTML = totalAbsents;
+
+    canPost = totalAbsents === 100
+    // if (!canPost){
+    //   document.querySelector("#submitBtn").setAttribute("disabled", true)
+    // } else {
+    //   document.querySelector("#submitBtn").removeAttribute("disabled")
+    // }
+  }
+</script>
+{% endblock %}
