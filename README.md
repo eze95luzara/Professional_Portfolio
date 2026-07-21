@@ -1,17 +1,18 @@
 ## 🌍 English Version
 
-# 🚀  Professional Portfolio
+# 🚀 Professional Portfolio
 
 A personal portfolio of projects developed during university and extracurricular activities, focused on showcasing software development skills, software architecture, and work with modern technologies.
 
 > Web development · Backend · Frontend · Data science · Academic solutions
 
-## 👋  About
+## 👋 About
 
 This portfolio brings together academic and learning-oriented projects, prioritizing complete, functional solutions and technologies transferable to the job market. The goal is to present a clear view of my growth as a developer and the technical skills I have developed.
- 
+
 ## 🧠 Core Skills
- - Backend development using Java, Spring Boot, Node.js and Express.
+
+- Backend development using Java, Spring Boot, Node.js and Express.
 - Front-end development with Angular, React and TypeScript
 - Design and consumption of APIs
 - Relational databases and SQL
@@ -94,6 +95,12 @@ This section highlights the academic projects with the highest value for a profe
 - Functionality: dice generator for D&D with a simple visual interface to practice interface development and graphic resource handling.
 - Technologies: Python, tkinter, image files.
 
+### 3. Generador de Presupuestos RP
+
+- Functionality: extracurricular project focused on budget automation with a practical interface and business logic for quickly generating quotations.
+- Technologies: Python and web-based automation logic.
+- Repository: [github.com/eze95luzara/generador-presupuestos-rp](https://github.com/eze95luzara/generador-presupuestos-rp)
+
 ## 🧹 Repository Guidance
 
 To keep the portfolio clean and easy to clone, it is recommended to exclude generated folders and files from development tools.
@@ -104,7 +111,6 @@ To keep the portfolio clean and easy to clone, it is recommended to exclude gene
 - Virtual and temporary environments: venv/, .venv/, **pycache**/, bin/, obj/, target/, .vs/, .idea/, packages/
 - Local runtime files: logs, backups, temporary databases, screenshots or executables not needed
 - Sensitive or irrelevant files: credentials, local configurations, personal data, or large test files
-
 
 ---
 
@@ -193,7 +199,6 @@ En esta sección se destacan los trabajos académicos con mayor valor para un po
 - Funcionalidad: conjunto de ejercicios y desafíos en Java para trabajar estructuras de datos, ordenamiento y lógica de programación.
 - Tecnologías: Java, Maven, programación orientada a objetos.
 
-
 ## 🌱 Proyectos Extra Curriculares
 
 En esta sección se agrupan los proyectos desarrollados con enfoque de aprendizaje, práctica y crecimiento personal.
@@ -207,6 +212,12 @@ En esta sección se agrupan los proyectos desarrollados con enfoque de aprendiza
 
 - Funcionalidad: generador de dados para D&D con interfaz visual simple para practicar desarrollo de interfaces y manejo de recursos gráficos.
 - Tecnologías: Python, tkinter, archivos de imagen.
+
+### 3. Generador de Presupuestos RP
+
+- Funcionalidad: proyecto extracurricular orientado a la automatización de presupuestos con una interfaz práctica y lógica de negocio enfocada en la generación rápida de cotizaciones.
+- Tecnologías: Python y lógica de automatización web.
+- Repositorio: [github.com/eze95luzara/generador-presupuestos-rp](https://github.com/eze95luzara/generador-presupuestos-rp)
 
 ## 🧹 Guia del repositorio
 
