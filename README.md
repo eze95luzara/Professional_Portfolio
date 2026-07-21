@@ -98,8 +98,10 @@ This section highlights the academic projects with the highest value for a profe
 ### 3. Generador de Presupuestos RP
 
 - Functionality: extracurricular project focused on budget automation with a practical interface and business logic for quickly generating quotations.
-- Technologies: Python and web-based automation logic.
-- Repository: [github.com/eze95luzara/generador-presupuestos-rp](https://github.com/eze95luzara/generador-presupuestos-rp)
+- Technologies: Angular, TypeScript, and a web-based automation flow.
+- Goal: project developed as a PWM initiative, focused on practical and professional web development.
+- Repository: [View repository](https://github.com/eze95luzara/generador-presupuestos-rp)
+- Demo: [View demo](https://generador-presupuestos-rp.vercel.app/)
 
 ## 🧹 Repository Guidance
 
@@ -216,8 +218,10 @@ En esta sección se agrupan los proyectos desarrollados con enfoque de aprendiza
 ### 3. Generador de Presupuestos RP
 
 - Funcionalidad: proyecto extracurricular orientado a la automatización de presupuestos con una interfaz práctica y lógica de negocio enfocada en la generación rápida de cotizaciones.
-- Tecnologías: Python y lógica de automatización web.
-- Repositorio: [github.com/eze95luzara/generador-presupuestos-rp](https://github.com/eze95luzara/generador-presupuestos-rp)
+- Tecnologías: Angular, TypeScript y un flujo de automatización web.
+- Objetivo: proyecto desarrollado como iniciativa PWM, con enfoque en desarrollo web práctico y profesional.
+- Repositorio: [Ver repositorio](https://github.com/eze95luzara/generador-presupuestos-rp)
+- Demo: [Ver demo](https://generador-presupuestos-rp.vercel.app/)
 
 ## 🧹 Guia del repositorio
 
